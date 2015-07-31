@@ -1,0 +1,390 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+		<title>CONTACTENOS</title>
+		  <style type="text/css">
+            /* Set a size for our map container, the Google Map will take up 100% of this container */
+            #map {
+                width: 500px;
+                height: 300px;
+            }
+        </style>
+			<meta charset="utf-8">
+		<meta name="format-detection" content="telephone=no" />
+		<link rel="icon" href="../images/favicon.ico">
+		<link rel="shortcut icon" href="../images/favicon.ico" />
+        <link rel="stylesheet" href="../css/form.css">
+		<link rel="stylesheet" href="../css/style.css">
+
+		<link rel="stylesheet" href="../css/booking.css">		<!-- -->
+		<link rel="stylesheet" href="../css/camera.css">				<!-- -->
+		<link rel="stylesheet" href="../css/owl.carousel.css">
+		<link rel="stylesheet" href="../css/swipebox.css">
+
+
+		<script src="../js/jquery.js"></script>
+		<script src="../js/jquery-migrate-1.2.1.js"></script>
+		<script src="../js/script.js"></script>
+        <script src="../js/TMForm.js"></script>
+		<script src="../js/superfish.js"></script>
+		<script src="../js/jquery.ui.totop.js"></script>
+		<script src="../js/jquery.equalheights.js"></script>
+		<script src="../js/jquery.mobilemenu.js"></script>
+		<script src="../js/jquery.easing.1.3.js"></script>
+
+		<script src="../js/jquery.swipebox.min.js"></script> 			<!-- -->
+		<script src="../js/owl.carousel.js"></script>
+		<script src="../js/camera.js"></script>
+		<script src="../js/jquery.mobile.customized.min.js"></script>	
+		<script src="../js/booking.js"></script>
+		<script src="../js/wow.min.js"></script>
+		<script type="text/javascript" src="../js/move-top.js"></script>
+		<script type="text/javascript" src="../js/easing.js"></script>
+
+		<!-- -->
+
+
+
+		 <script type="text/javascript">
+			jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+				});
+			});
+		</script>
+
+
+
+
+		<script>
+		$(document).ready(function(){
+			$().UItoTop({ easingType: 'easeOutQuart' });
+			});
+		</script>
+
+
+
+	
+			    <script type="text/javascript">
+					jQuery(function($) {
+						$(".swipebox").swipebox();
+					});
+				</script>
+
+		<link href="../css/animate.css" rel='stylesheet' type='text/css' />
+		<script>
+			new WOW().init();
+		</script>
+
+
+
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        
+       			 <script type="text/javascript">
+            	  // When the window has finished loading create our google map below
+           			 google.maps.event.addDomListener(window, 'load', init);
+        
+            		function init() {
+            	    // Basic options for a simple Google Map
+            	    // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+            	    //marcador con la ubicación de la Universidad
+				
+
+                var mapOptions = {
+                    // How zoomed in you want the map to start at (always required)
+                    zoom: 15,
+
+                    // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(-13.522413, -71.962290), // New York
+
+                    // How you would like to style the map. 
+                    // This is where you would paste any style found on Snazzy Maps.
+                    styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#193341"}]},
+                    {"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#2c5a71"}]},
+                    {"featureType":"road","elementType":"geometry","stylers":[{"color":"#29768a"},{"lightness":-37}]},
+                    {"featureType":"poi","elementType":"geometry","stylers":[{"color":"#406d80"}]},
+                    {"featureType":"transit","elementType":"geometry","stylers":[{"color":"#406d80"}]},
+                    {"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#3e606f"},
+                    {"weight":2},{"gamma":0.84}]},{"elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},
+                    {"featureType":"administrative","elementType":"geometry","stylers":[{"weight":0.6},{"color":"#1a3541"}]},
+                    {"elementType":"labels.icon","stylers":[{"visibility":"off"}]},
+                    {"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#2c5a71"}]}]
+                };
+
+                // Get the HTML DOM element that will contain your map 
+                // We are using a div with id="map" seen below in the <body>
+                var mapElement = document.getElementById('map');
+
+                // Create the Google Map using our element and options defined above
+                var map = new google.maps.Map(mapElement, mapOptions);
+
+                // Let's also add a marker while we're at it
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(-13.522500, -71.962926),
+                    map: map,
+                    title: 'Snazzy!'
+
+                     });
+
+                var popup = new google.maps.InfoWindow({
+  			    content: 'Tours Travel'});
+   			    popup.open(map, marker);  
+
+   			    //Imagen a mostrar con su ruta
+				/*var image = new google.maps.MarkerImage(
+     		   '../images/fachada.jpg'
+      			, new google.maps.Size(300,300));*/
+
+      			//Marcador con la imagen anterior como icono
+				var place = new google.maps.LatLng(-13.522421, -71.962623);
+				var marker = new google.maps.Marker({
+     			   position: place
+     	           , map: map
+     			   , title: 'Cayo Los Pajaros, un clic para ver a tamaño completo'
+                   , icon: image
+                   , animation: google.maps.Animation.DROP,});
+        
+            }
+        </script>
+
+		   
+
+	</head>
+	<body>
+<!--==============================header=================================-->
+		<header class="wow bounceInRight animated" data-wow-delay="0.3s" style="visibility: visible; -webkit-animation-delay: 0.4s;" >
+			<div class="container_12">
+				<div class="grid_12 wow bounceInLeft animated" data-wow-delay="0.6s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+					<div class="menu_block">
+						<nav class="horizontal-nav full-width horizontalNav-notprocessed">
+							<ul class="sf-menu">
+							<li ><a href="../index.php">INICIO</a></li>
+								<li ><a href="paquetes.php">PAQUETES</a></li>
+								<li><a href="multimedia.php">MULTIMEDIA</a></li>
+								<li><a href="blog.php">BLOG</a></li>
+								<li class="current"><a href="contactos.php">CONTACTOS</a></li>
+							</ul>
+						</nav>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="grid_12 wow bounceInRight animated" data-wow-delay="0.9s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+					<h1>
+						<a href="../index.php">
+							<img src="../images/logo.png" alt="Your Happy Family">
+						</a>
+					</h1>
+				</div>
+			</div>
+		</header>
+<!--==============================Content=================================-->
+
+		<div class="content"><div class="ic">More Website Templates @ itdecsa.com - February 10, 2014!</div>
+			<div class="container_12">
+
+
+			<div>
+				<div class="grid_5">
+					<h3 class="wow bounceInLeft animated" data-wow-delay="1.1s">CONT&Aacute;CTOS</h3>
+					<div>
+						<p class="wow bounceInLeft animated" data-wow-delay="1.3s">En cualquier momento estamos siempre a su servicio <span class="col1"></p>
+						<p class="wow bounceInLeft animated" data-wow-delay="1.5s">Ub&iacute;quenos en las siguientes direciones, no dude en consultar con nosotros lo atenderemos las 24 horas del d&iacute;a, los 365 d&iacute;as del año</p>
+						<div class="clear"></div>
+						
+						<address>
+							<dl class="wow bounceInLeft animated" data-wow-delay="1.7s">
+								<dt>TOURSTRAVEL <br>
+									Direcci&oacute;n: ...<br>
+									Cusco - Per&uacute;.
+								</dt>
+								<dd><span>Tel&eacute;fono:</span>+1 800 559 6580</dd>
+								<dd><span>M&oacute;vil:</span>+1 800 603 6035</dd>
+								<dd><span>FAX:</span>+1 800 889 9898</dd>
+								<dd>E-mail: <a href="#" class="col1">contactos@tourstravel.com</a></dd>
+							</dl>
+						</address>
+					</div>
+				</div>
+
+
+				<div class="grid_6 prefix_1 wow bounceInRight animated" data-wow-delay="1.9s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+					<h3 >CONT&Aacute;CTANOS</h3>
+					<form id="form">
+						<div class="success_wrapper">
+							<div class="success-message">Contact form submitted</div>
+						</div>
+						<label class="name">
+							<input type="text" name="nombre"  placeholder="Nombre:" data-constraints="@Required @JustLetters" />
+							<span class="empty-message">*This field is required.</span>
+							<span class="error-message">*This is not a valid name.</span>
+						</label>
+						<label class="email">
+							<input type="text" name="email" placeholder="Email:" data-constraints="@Required @Email" />
+							<span class="empty-message">*This field is required.</span>
+							<span class="error-message">*This is not a valid email.</span>
+						</label>
+						<label class="country">
+							<input type="text" name="ciudad" placeholder="Ciudad:" data-constraints="@Required @JustLetters"/>
+							<span class="empty-message">*This field is required.</span>
+							<span class="error-message">*This is not a valid phone.</span>
+						</label>
+						<label class="message">
+							<textarea name="mensaje" placeholder="Mensaje:" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
+							<span class="empty-message">*This field is required.</span>
+							<span class="error-message">*The message is too short.</span>
+						</label>
+						<div class="clear"></div>
+						<div class="btns">
+								<div class="formBoton">
+                        			<input  type="submit" value="Enviar"  name="enviar" />
+								</div>
+						</div>
+					</form>
+				</div>
+				</div>
+				
+
+				<div  class="wow bounceInLeft animated" data-wow-delay="1.4" style="position:relative;"  >
+					 
+					<figure >
+							<!-- <iframe src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Brooklyn,+New+York,+NY,+United+States&amp;aq=0&amp;sll=37.0625,-95.677068&amp;sspn=61.282355,146.513672&amp;ie=UTF8&amp;hq=&amp;hnear=Brooklyn,+Kings,+New+York&amp;ll=40.649974,-73.950005&amp;spn=0.01628,0.025663&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>-->
+							<div id="map" style="width:100%;top:40px;"></div>					 
+					</figure>
+				</div>
+
+
+
+			</div>
+		</div>
+        
+        
+        
+        
+        
+    <?php
+
+$enviar=$_POST['enviar'];
+if($enviar)
+{
+
+
+
+$nombre = $_POST['nombre'];
+$correo= $_POST['email'];
+$ciudad= $_POST['ciudad'];
+$mensaje = $_POST['mensaje'];
+
+
+ 
+ 
+ 
+ 
+ 
+$destinatario = "contactos@wayquistravel.com"; 
+$asunto = "CONTACTOS";  
+$cuerpo ='
+
+<html>
+<head>
+<title>CONTACTOS DESDE TOURS TRAVEL</title>
+</head>
+
+<body style="background:#F4F2EF; font-family:Verdana, Geneva, sans-serif; font-size:12px; color:#903;">
+<table width="800" border="0" bgcolor="#FFFFFFF" align="center" bordercolor="#F4F2EF" cellpadding="0" cellspacing="0">
+  
+  <tr>
+    <td height="23" colspan="2" bgcolor="#33CC00" align="center"><font color="#FF6600" size="+2" align="center">SISTEMA DE RERSERVAS</font></td>
+  </tr>
+  <tr>
+    <td height="23" colspan="2" bgcolor="#990033" ><font color="#FFFFFF" size="+2">CONTACTO DESDE TOURSTRAVEL</font></td>
+  </tr>
+  <tr>
+    <td width="216" height="23">Nombre:</td>
+    <td ><font color="#FF6600">'.$nombre.'</font></td>
+  </tr>
+
+<tr>
+    <td width="216" height="23">E-mail:</td>
+    <td ><font color="#FF6600">'.$correo.'</font></td>
+  </tr>
+<tr>
+    <td width="216" height="23">Ciudad:</td>
+    <td ><font color="#FF6600">'.$ciudad.'</font></td>
+  </tr>
+ 
+  <tr>
+    <td height="23">Mensaje:</td>
+    <td ><font color="#FF6600">'.$mensaje.'</font></td>
+  </tr>
+  
+   
+</table>
+</body>
+</html>
+';
+
+
+
+//para el envío en formato HTML 
+$headers = "MIME-Version: 1.0\r\n"; 
+$headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
+
+//dirección del remitente 
+$headers .= "From: Sistema de contactos <contactos@wayquistravel.com>\r\n"; 
+
+//dirección de respuesta, si queremos que sea distinta que la del remitente 
+$headers .= "Reply-To:".$correo."\r\n"; 
+
+//ruta del mensaje desde origen a destino 
+$headers .= "Return-path: contactos@wayquistravel.com\r\n"; 
+
+//direcciones que recibián copia 
+//$headers .= "Cc: maria@desarrolloweb.com\r\n"; 
+
+//direcciones que recibirán copia oculta 
+//$headers .= "Bcc: pepe@pepe.com,juan@juan.com\r\n"; 
+
+mail($destinatario,$asunto,$cuerpo,$headers); 
+	  
+	  
+    echo "<font color='#000000' >Los datos fueron enviados correctamente, en breve nos pondremos en contacto con Ud.</fontt>
+	<br>
+
+	";
+}
+
+
+?>    
+        
+        
+        
+        
+        
+        
+        
+        
+<!--==============================footer=================================-->
+		<footer>
+			<div class="container_12">
+				<div class="grid_12">
+					<div class="socials wow bounceInRight animated" data-wow-delay="0.4s">
+						<a href="https://www.facebook.com/pages/Wayquistravel/753117348070173?fref=ts" class="fa fa-facebook" target="_blank"></a>
+						<a href="#" class="fa fa-twitter"></a>
+						<a href="#" class="fa fa-google-plus"></a>
+					</div>
+					<div class="copy wow bounceInLeft animated" data-wow-delay="0.6s">
+						(c) 2014 | <a href="#">Pol&iacute;ticas de Privacidad</a>| <a href="http://wayquistravel.com:2095/" target="_blank">Correo Coorporativo</a>  | Diseño <a href="http://www.itdecsa.com/" rel="nofollow" target="_blank">itdecsa.com</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script>
+		$(function (){
+			$('#bookingForm').bookingForm({
+				ownerEmail: '#'
+			});
+		})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,4 @@
+[18-Jul-2015 17:08:14 UTC] PHP Warning:  unlink(../imagenes/paquetes/): Is a directory in /home/itdecsac/public_html/tours/administracion/admin/listarPaquete.php on line 128
+[18-Jul-2015 17:08:16 UTC] PHP Warning:  unlink(../imagenes/paquetes/): Is a directory in /home/itdecsac/public_html/tours/administracion/admin/listarPaquete.php on line 128
+[18-Jul-2015 17:08:57 UTC] PHP Warning:  unlink(../imagenes/paquetes/): Is a directory in /home/itdecsac/public_html/tours/administracion/admin/listarPaquete.php on line 128
+[18-Jul-2015 17:08:57 UTC] PHP Warning:  unlink(../imagenes/paquetes/): Is a directory in /home/itdecsac/public_html/tours/administracion/admin/listarPaquete.php on line 128

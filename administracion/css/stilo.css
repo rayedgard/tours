@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+.conten
+{
+	height:100%;
+	margin:0 auto;
+	width:100%; /*Ancho de a parte central*/
+	position:relative;
+	color:#ffffff;
+	overflow:hidden;
+	border:#9C3  solid 1px;
+	background:#F6F6F6;
+	-webkit-border-radius:13px;
+	border-radius:13px;
+}

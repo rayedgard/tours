@@ -1,0 +1,28 @@
+[18-Jul-2015 16:24:03 UTC] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: YES) in /home/itdecsac/public_html/tours/conexion.php on line 23
+[18-Jul-2015 16:25:35 UTC] PHP Warning:  mysql_connect(): Access denied for user 'itdecsa_tours'@'localhost' (using password: YES) in /home/itdecsac/public_html/tours/conexion.php on line 23
+[18-Jul-2015 16:26:48 UTC] PHP Warning:  mysql_connect(): Access denied for user 'itdecsac_tours'@'localhost' (using password: YES) in /home/itdecsac/public_html/tours/conexion.php on line 23
+[18-Jul-2015 16:26:53 UTC] PHP Warning:  mysql_connect(): Access denied for user 'itdecsac_tours'@'localhost' (using password: YES) in /home/itdecsac/public_html/tours/conexion.php on line 23
+[21-Jul-2015 20:50:08 UTC] PHP Warning:  include(appserv/main.php): failed to open stream: No such file or directory in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:50:08 UTC] PHP Warning:  include(appserv/main.php): failed to open stream: No such file or directory in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:50:08 UTC] PHP Warning:  include(): Failed opening 'appserv/main.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:50:24 UTC] PHP Warning:  include(appserv/main.php): failed to open stream: No such file or directory in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:50:24 UTC] PHP Warning:  include(appserv/main.php): failed to open stream: No such file or directory in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:50:24 UTC] PHP Warning:  include(): Failed opening 'appserv/main.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:50:25 UTC] PHP Warning:  include(appserv/main.php): failed to open stream: No such file or directory in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:50:25 UTC] PHP Warning:  include(appserv/main.php): failed to open stream: No such file or directory in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:50:25 UTC] PHP Warning:  include(): Failed opening 'appserv/main.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:50:27 UTC] PHP Warning:  include(appserv/main.php): failed to open stream: No such file or directory in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:50:27 UTC] PHP Warning:  include(appserv/main.php): failed to open stream: No such file or directory in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:50:27 UTC] PHP Warning:  include(): Failed opening 'appserv/main.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:50:33 UTC] PHP Warning:  include(appserv/main.php): failed to open stream: No such file or directory in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:50:33 UTC] PHP Warning:  include(appserv/main.php): failed to open stream: No such file or directory in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:50:33 UTC] PHP Warning:  include(): Failed opening 'appserv/main.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:50:57 UTC] PHP Warning:  include(appserv/main.php): failed to open stream: No such file or directory in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:50:57 UTC] PHP Warning:  include(appserv/main.php): failed to open stream: No such file or directory in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:50:57 UTC] PHP Warning:  include(): Failed opening 'appserv/main.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:50:58 UTC] PHP Warning:  include(appserv/main.php): failed to open stream: No such file or directory in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:50:58 UTC] PHP Warning:  include(appserv/main.php): failed to open stream: No such file or directory in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:50:58 UTC] PHP Warning:  include(): Failed opening 'appserv/main.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:51:28 UTC] PHP Warning:  include(appserv/main.php): failed to open stream: No such file or directory in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:51:28 UTC] PHP Warning:  include(appserv/main.php): failed to open stream: No such file or directory in /home/itdecsac/public_html/tours/index.php on line 15
+[21-Jul-2015 20:51:28 UTC] PHP Warning:  include(): Failed opening 'appserv/main.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/itdecsac/public_html/tours/index.php on line 15
