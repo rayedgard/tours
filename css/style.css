@@ -40,7 +40,7 @@ body {
 	font-size:10px;
 	margin:-220% 0 0 0;
 	overflow:hidden;
-	padding:0
+	padding:0;
 }
 
 strong {
@@ -78,6 +78,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
 	color: #3e454c;
     text-transform: uppercase;
+
 }
 
 
@@ -97,6 +98,8 @@ h3 {
     margin-bottom: 17px;
     font-weight: normal;
 }
+
+
 
 h3.head1 {
     padding-top: 111px;
