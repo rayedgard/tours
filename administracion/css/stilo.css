@@ -16,3 +16,9 @@
 	-webkit-border-radius:13px;
 	border-radius:13px;
 }
+.flotante {
+    display:scroll;
+        position:fixed;
+        bottom:320px;
+        right:0px;
+}

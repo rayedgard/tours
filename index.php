@@ -110,8 +110,19 @@
 	</head>
 	<body class="page1" id="top">
 
-    
-    
+
+
+	<!--para los iconos de idioma-->    
+    <a class='flotanteE' href='#' ><img src='images/esp.png' border="0"/></a>
+    <a class='flotanteI' href='#' ><img src='images/ing.png' border="0"/></a>
+	<!--fin idioma-->
+
+
+
+
+
+
+
     <!-- coneccion php -->
     <?php 
 	include_once("conexion.php");
