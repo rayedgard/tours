@@ -345,7 +345,11 @@ function googleTranslateElementInit() {
 
 		<div class="slider_wrapper wow fadeInUpBig animated animated"  data-wow-delay="0.0s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
 			<div id="camera_wrap" class="">
+<<<<<<< HEAD
+				<!--slide01->
+=======
 				<!--slide01-->
+>>>>>>> a7ff026c185e87d9ecfc203d6341481d8125536a
               <?php
 			  for($j=0;$j<count($idPaquete);$j++)
 			  {
@@ -355,15 +359,23 @@ function googleTranslateElementInit() {
 					<div class="caption fadeIn">
 						<h2 class="wow bounceInRight animated" data-wow-delay="0.8s" style="visibility: visible; -webkit-animation-delay: 0.4s;""><?php echo $nombrePaquete[$j];?></h2>
 
+<<<<<<< HEAD
 						<div class="price wow bounceInLeft animated" data-wow-delay="1.0s" visibility: visible; -webkit-animation-delay: 0.4s;">
 							
 						</div>
+=======
+						
+>>>>>>> a61fce56a5eb54af1626b8f57cafdc5370e57f74
 
 						<a class="wow bounceInRight animated" data-wow-delay="1.2s" style="visibility: visible; -webkit-animation-delay:0.4s;" href="pages/paquetes/paquete.php?cod=<?php echo $idaPquete[$j];?>&i=<?php echo $i;?>" ><?php echo $boton; ?></a>
 					</div>
 
 				</div>
+<<<<<<< HEAD
+                <!---fin slide01-->
+=======
                 <!--fin slide01-->
+>>>>>>> a7ff026c185e87d9ecfc203d6341481d8125536a
              <?php  } ?>
 			</div>
 		</div>
@@ -383,7 +395,14 @@ function googleTranslateElementInit() {
                 
                 <div class="grid_4">
 
+<<<<<<< HEAD
+					<div class="banner1 <?php echo $transicion[$k];?>" data-wow-delay="1.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+
+						
+
+=======
 					<div class="banner <?php echo $transicion[$k];?>" data-wow-delay="1.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+>>>>>>> a7ff026c185e87d9ecfc203d6341481d8125536a
 						<img src="administracion/imagenes/paquetes/<?php echo $imagenAl[$k];?>" alt="">
 
 						<div class="label">
@@ -463,12 +482,22 @@ function googleTranslateElementInit() {
                                 <option>12</option>
                                 <option>13</option>
                                 <option>14</option>
+<<<<<<< HEAD
                                 <option>15</option>
+=======
+                                <option>15</option> 
+>>>>>>> a61fce56a5eb54af1626b8f57cafdc5370e57f74
 							</select>
 							<div class="clear"></div>
+<<<<<<< HEAD
+							<em>Habitaciones</em>
+							<select name="habitaciones" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">								
+								<option>0</option>
+=======
 							<em><?php echo $habitaciones;?></em>
 							<select name="habitaciones" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
 								<option>1</option>
+>>>>>>> a7ff026c185e87d9ecfc203d6341481d8125536a
 								<option>1</option>
 								<option>2</option>
 								<option>3</option>
@@ -478,14 +507,13 @@ function googleTranslateElementInit() {
                                 <option>7</option>
                                 <option>8</option>
                                 <option>9</option>
-                                <option>10</option>
+                                <option>10</option>                            
 							</select>
 						</div>
 						<div class="fl1 fl2">
 							<em><?php echo $ninos;?></em>
 							<select name="ninos" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
-								<option>0</option>
-								<option>0</option>
+								<option>1</option>
 								<option>1</option>
 								<option>2</option>
 								<option>3</option>
@@ -500,7 +528,11 @@ function googleTranslateElementInit() {
                                 <option>12</option>
                                 <option>13</option>
                                 <option>14</option>
+<<<<<<< HEAD
                                 <option>15</option>
+=======
+                                <option>15</option> 
+>>>>>>> a61fce56a5eb54af1626b8f57cafdc5370e57f74
 							</select>
 						</div>
                         
