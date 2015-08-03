@@ -81,6 +81,9 @@
 	<!-- pppppppppppppppppppppppppppfin de codigo de animaciónpppppppppppppppppppppppppppppppppp-->	
 
 	</head>
+
+
+
 	<body>
 <!--==============================header=================================-->
 		<header class="wow bounceInRight animated" data-wow-delay="0.3s" style="visibility: visible; -webkit-animation-delay: 0.4s;" >
@@ -186,10 +189,15 @@ while($row2 = mysql_fetch_array($paquetesAle))
 	
 	?>
 
-		<div class="content">
-		<div class="ic">More Website Templates @ itdecsa.com - February 10, 2014!</div>
+		<div class="content" style="padding:15px; ">
+
 			<div class="container_12">
-				<div class="banners">
+
+			
+				<div class="banners" style="padding-top:10px; ">
+				<h1 style="text-align:center;font-size:37px;">PAQUETES</h1>
+
+
                 
 					   <?php
 
@@ -198,7 +206,9 @@ while($row2 = mysql_fetch_array($paquetesAle))
 			   ?>
                 
                 <div class="grid_4 <?php echo $transicion[$k];?>" data-wow-delay="0.2s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+
 					<div class="banner">
+
 
 						<img src="../administracion/imagenes/paquetes/
 						<?php
@@ -224,6 +234,9 @@ while($row2 = mysql_fetch_array($paquetesAle))
 				                	
 				</div>
 			</div>
+			
+
+
 		</div>
 <!--==============================footer=================================-->
 		<footer>
