@@ -256,7 +256,7 @@ function googleTranslateElementInit() {
 
 		<div class="slider_wrapper wow fadeInUpBig animated animated"  data-wow-delay="0.0s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
 			<div id="camera_wrap" class="">
-				<!---------------slide01------------------->
+				<!--slide01->
               <?php
 			  for($j=0;$j<count($idPaquete);$j++)
 			  {
@@ -266,16 +266,13 @@ function googleTranslateElementInit() {
 					<div class="caption fadeIn">
 						<h2 class="wow bounceInRight animated" data-wow-delay="0.8s" visibility: visible; -webkit-animation-delay: 0.4s;"><?php echo $nombrePaquete[$j];?></h2>
 
-						<div class="price wow bounceInLeft animated" data-wow-delay="1.0s" visibility: visible; -webkit-animation-delay: 0.4s;">
-							Valor:
-							<span>$<?php echo $costo[$j];?></span>
-						</div>
+						
 
 						<a class="wow bounceInRight animated" data-wow-delay="1.2s" visibility: visible; -webkit-animation-delay: 0.4s;" href="pages/paquetes/paquete.php?cod=<?php echo $idaPquete[$j];?>">Leer más</a>
 					</div>
 
 				</div>
-                <!---------------fin slide01------------------->
+                <!---fin slide01-->
              <?php  } ?>
 			</div>
 		</div>
@@ -295,7 +292,7 @@ function googleTranslateElementInit() {
                 
                 <div class="grid_4">
 
-					<div class="banner <?php echo $transicion[$k];?>" data-wow-delay="1.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+					<div class="banner1 <?php echo $transicion[$k];?>" data-wow-delay="1.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
 
 						
 
@@ -375,12 +372,16 @@ function googleTranslateElementInit() {
                                 <option>8</option>
                                 <option>9</option>
                                 <option>10</option>
-                                
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option> 
 							</select>
 							<div class="clear"></div>
 							<em>Habitaciones</em>
-							<select name="habitaciones" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
-								<option>1</option>
+							<select name="habitaciones" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">								
+								<option>0</option>
 								<option>1</option>
 								<option>2</option>
 								<option>3</option>
@@ -390,14 +391,13 @@ function googleTranslateElementInit() {
                                 <option>7</option>
                                 <option>8</option>
                                 <option>9</option>
-                                <option>10</option>
+                                <option>10</option>                            
 							</select>
 						</div>
 						<div class="fl1 fl2">
 							<em>Niños</em>
 							<select name="ninos" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
-								<option>0</option>
-								<option>0</option>
+								<option>1</option>
 								<option>1</option>
 								<option>2</option>
 								<option>3</option>
@@ -408,6 +408,11 @@ function googleTranslateElementInit() {
                                 <option>8</option>
                                 <option>9</option>
                                 <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option> 
 							</select>
 						</div>
                         

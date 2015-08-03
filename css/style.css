@@ -67,6 +67,7 @@ input {
 
 img {
 	max-width: 100%;
+  
 }
 
 
@@ -94,7 +95,7 @@ h3 {
     font-size: 30px;
     line-height: 27px;
     color: #002747;
-    padding-top: 116px;
+    padding-top: 15px;
     margin-bottom: 17px;
     font-weight: normal;
 }
@@ -125,7 +126,7 @@ h4 {
 
 h5 {
     font-size: 20px;
-    padding-top: 115px;
+    padding-top: 15px;
     line-height: 27px;
     color: #002747;
     text-transform: uppercase;
@@ -140,10 +141,13 @@ ul {
 	padding: 0;
 	margin: 0;
 	list-style: none;
+
 }
 
 ul.list {
     margin-bottom: 2px;
+  
+
 }
 
 
@@ -154,11 +158,15 @@ ul.list+h3.head1 {
 ul.list li {
     font-size: 18px;
     padding-left: 21px;
-    background: url(../images/marker.png) 0 6px no-repeat;
+    
+  
+
 }
 
 ul.list li+li {
     margin-top: 10px;
+    display: inline-block;
+
 }
 
 ul.list + a.link1 {
@@ -286,7 +294,7 @@ header {
     -ms-background-size: 100% auto;
     -o-background-size: 100% auto;
     background-size: 100% auto;
-    padding-bottom: 98px;
+    padding-bottom: 200px;
     
 }
 
@@ -327,7 +335,8 @@ header h1 a img {
 
 .content{
     background-color: #fff;
-    padding-bottom: 120px;
+    padding-bottom: 50px;
+
 }
 .page1  .content {
     padding-bottom: 115px;
@@ -336,6 +345,20 @@ header h1 a img {
 .banner {
     top: -45px;
     position: relative;
+   
+}
+
+.banner1 {
+    top: -45px;
+    position: relative;
+    opacity:1;
+ 
+  
+ 
+   /*Glow*/
+  -webkit-box-shadow: 0px 0px 30px rgba(6,13,81,0.9);
+  -moz-box-shadow: 0px 0px 30px rgba(6,13,81,0.9);
+  box-shadow: 0px 0px 30px rgba(6,13,81,0.9);
 }
 
 .banner .label {
