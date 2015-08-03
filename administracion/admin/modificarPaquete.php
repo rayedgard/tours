@@ -28,7 +28,7 @@ $paquete = mysql_fetch_array($consultaPaquete);
     Seleccione Idioma:
 <br />
     <select name="idioma">
-    		<option value="<?php echo $paquete[4];?>"><?php if($seccion[3]==0){echo "Español";}else{ echo "Ingles";}?></option>
+    		<option value="<?php echo $paquete[3];?>"><?php if($paquete[3]==0){echo "Español";}else{ echo "Ingles";}?></option>
            	<option value="0">Español</option>
             <option value="1">Ingles</option>
         </select>

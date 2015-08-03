@@ -1202,6 +1202,10 @@ fin opacidad*/
 
 
         */
+
+
+/*--- para los iconos de idioma-----*/
+
 .flotanteE
 {
     display:scroll;
@@ -1242,3 +1246,4 @@ fin opacidad*/
   -moz-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
   box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
 }
+/*--- fin iconos de idioma-----*/
