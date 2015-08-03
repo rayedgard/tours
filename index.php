@@ -113,8 +113,8 @@
 
 
 	<!--para los iconos de idioma-->    
-    <a class='flotanteE' href='#' ><img src='images/esp.png' border="0"/></a>
-    <a class='flotanteI' href='#' ><img src='images/ing.png' border="0"/></a>
+    <a class='flotanteE' href='index.php?i=0' ><img src='images/esp.png' border="0"/></a>
+    <a class='flotanteI' href='index.php?i=1' ><img src='images/ing.png' border="0"/></a>
 	<!--fin idioma-->
 
 
@@ -128,8 +128,79 @@
 	include_once("conexion.php");
 	$link = Conectarse();
 	
+
+	//Codigo para discriminar el idioma
+
+	if( $_GET['i']=='' or $_GET['i']=='1')
+	{
+		$i='1';
+	}
+	else
+	{
+		$i='0';
+	}
+
+	
+	if($i==1)
+	{
+		//botones
+		$boton="READ MORE";
+		$reservas="RESERVE";
+		//titulos
+		$titulo1="BOOKING FORM";
+		$titulo2="WHO WE ARE";
+		$titulo3="EVENTS";
+		//fromulario de reservas
+		$nombre="Name";
+		$correo="Email";
+		$pais="Country";
+		$telefono="Phone";
+		$llegada="Arrival";
+		$retorno="Return";
+		$hospedaje="Accommodation type";
+		$economico="Economic";
+		$estandar="Standard";
+		$lujo="Luxury";
+		$adultos="Adults";
+		$ninos="Children";
+		$habitaciones="Room";
+		$mensaje="Message";
+
+
+	}
+	if($i==0)
+	{
+		//botones
+		$boton="LEER MÁS";
+		$reservas="RESERVAR";
+			
+			//titulos
+		$titulo1="FORMULARIO DE RESERVAS";
+		$titulo2="QUIENES SOMOS";
+		$titulo3="EVENTOS";
+			//fromulario de reservas
+		$nombre="Nombre";
+		$correo="Correo";
+		$pais="Pais";
+		$telefono="Teléfono";
+		$llegada="Llegada";
+		$retorno="Retorno";
+		$hospedaje="Tipo de Hospedaje";
+		$economico="Económico";
+		$estandar="Estandar";
+		$lujo="Lujo";
+		$adultos="Adultos";
+		$ninos="Niños";
+		$habitaciones="Habitaciones";
+		$mensaje="Mensaje";
+	}
+	//fin discriminacion de idioma
+
+
+
+
 	//conuslta 
-	$consultaPaquetes ="SELECT paquetes.idPaquete, paquetes.nombrePaquete, banner.imagen, paquetes.costo FROM  banner, paquetes WHERE paquetes.eliminar='0' AND banner.idPaquete = paquetes.idPaquete ORDER BY paquetes.idPaquete DESC LIMIT 5"; 
+	$consultaPaquetes ="SELECT paquetes.idPaquete, paquetes.nombrePaquete, banner.imagen, paquetes.costo FROM  banner, paquetes WHERE paquetes.eliminar='0' AND banner.idPaquete = paquetes.idPaquete  AND paquetes.idioma='$i' ORDER BY paquetes.idPaquete DESC LIMIT 5"; 
 $paquetes = mysql_query($consultaPaquetes,$link);
 
 	//nombre del titulo
@@ -196,7 +267,7 @@ while($row2 = mysql_fetch_array($paquetesAle))
      
      
      
-     <!--------------para el idioma----------->
+     <!--para el idioma-->
      
      
 	<!--	 <div class="info">
@@ -212,7 +283,7 @@ function googleTranslateElementInit() {
     </div>
         -->
         
-        <!-----------------fin idioma-------------->
+        <!--fin idioma-->
         
         
         
@@ -229,14 +300,29 @@ function googleTranslateElementInit() {
 				<div class="grid_12 wow fadeInUpBig animated animated" data-wow-delay="0.2s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
 					<div class="menu_block">
 						<nav class="horizontal-nav full-width horizontalNav-notprocessed">
+						
+						<?php  if($i=='1'){echo ' 	
 							<ul class="sf-menu">
-								<li class="current"><a href="index.php">INICIO</a></li>
-								<li><a href="pages/paquetes.php">PAQUETES</a></li>
-								<li><a href="pages/multimedia.php">MULTIMEDIA</a></li>
-								<li><a href="pages/blog.php">BLOG</a></li>
-								<li><a href="pages/contactos.php">CONTACTOS</a></li>
-                       
-							</ul>
+								<li class="current"><a href="index.php?i='.$i.'">HOME</a></li>
+								<li><a href="pages/paquetes.php?i='.$i.'">PACKAGES</a></li>
+								<li><a href="pages/multimedia.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li><a href="pages/blog.php?i='.$i.'">BLOG</a></li>
+								<li><a href="pages/contactos.php?i='.$i.'">CONTACTS</a></li>
+                        	</ul>
+                        	';}
+                        	else
+                        	{
+                        		echo ' 	
+							<ul class="sf-menu">
+								<li class="current"><a href="index.php?i='.$i.'">INICIO</a></li>
+								<li><a href="pages/paquetes.php?i='.$i.'">PAQUETES</a></li>
+								<li><a href="pages/multimedia.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li><a href="pages/blog.php?i='.$i.'">BLOG</a></li>
+								<li><a href="pages/contactos.php?i='.$i.'">CONTACTOS</a></li>
+                        	</ul>
+                        	';}
+                        	?>
+					
 						</nav>
 						<div class="clear"></div>
 					</div>
@@ -256,7 +342,11 @@ function googleTranslateElementInit() {
 
 		<div class="slider_wrapper wow fadeInUpBig animated animated"  data-wow-delay="0.0s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
 			<div id="camera_wrap" class="">
+<<<<<<< HEAD
 				<!--slide01->
+=======
+				<!--slide01-->
+>>>>>>> a7ff026c185e87d9ecfc203d6341481d8125536a
               <?php
 			  for($j=0;$j<count($idPaquete);$j++)
 			  {
@@ -264,15 +354,19 @@ function googleTranslateElementInit() {
                 <div data-src="administracion/imagenes/paquetes/<?php echo $imagen[$j];?>">
 
 					<div class="caption fadeIn">
-						<h2 class="wow bounceInRight animated" data-wow-delay="0.8s" visibility: visible; -webkit-animation-delay: 0.4s;"><?php echo $nombrePaquete[$j];?></h2>
+						<h2 class="wow bounceInRight animated" data-wow-delay="0.8s" style="visibility: visible; -webkit-animation-delay: 0.4s;""><?php echo $nombrePaquete[$j];?></h2>
 
 						
 
-						<a class="wow bounceInRight animated" data-wow-delay="1.2s" visibility: visible; -webkit-animation-delay: 0.4s;" href="pages/paquetes/paquete.php?cod=<?php echo $idaPquete[$j];?>">Leer más</a>
+						<a class="wow bounceInRight animated" data-wow-delay="1.2s" style="visibility: visible; -webkit-animation-delay:0.4s;" href="pages/paquetes/paquete.php?cod=<?php echo $idaPquete[$j];?>"><?php echo $boton; ?></a>
 					</div>
 
 				</div>
+<<<<<<< HEAD
                 <!---fin slide01-->
+=======
+                <!--fin slide01-->
+>>>>>>> a7ff026c185e87d9ecfc203d6341481d8125536a
              <?php  } ?>
 			</div>
 		</div>
@@ -285,24 +379,27 @@ function googleTranslateElementInit() {
                 
                 
                  <?php
-			  for($k=0;$k<count($idPaqueteAl);$k++)
+			for($k=0;$k<count($idPaqueteAl);$k++)
 			  {
 			   ?>
                 
                 
                 <div class="grid_4">
 
+<<<<<<< HEAD
 					<div class="banner1 <?php echo $transicion[$k];?>" data-wow-delay="1.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
 
 						
 
+=======
+					<div class="banner <?php echo $transicion[$k];?>" data-wow-delay="1.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+>>>>>>> a7ff026c185e87d9ecfc203d6341481d8125536a
 						<img src="administracion/imagenes/paquetes/<?php echo $imagenAl[$k];?>" alt="">
-
 
 						<div class="label">
 							<div class="title"><?php echo $nombrePaqueteAl[$k];?></div>
 							<div class="price">FROM<span>$ <?php echo $costoAl[$k];?></span></div>
-							<a href="pages/paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$k];?>">leer más</a>
+							<a href="pages/paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$k];?>"><?php echo $boton; ?></a>
 						</div>
 
 
@@ -319,47 +416,47 @@ function googleTranslateElementInit() {
                 
                 <div class="clear"></div>
 				<div class="grid_6">
-					<h3 class="about-grid wow bounceInLeft animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">FORMULARIO DE RESERVAS</h3>
+					<h3 class="about-grid wow bounceInLeft animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;"><?php echo $titulo1; ?></h3>
 					<form id="bookingForm" method="post" class="about-grid wow bounceInLeft animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;" >
 						<div class="fl1">
 							<div class="tmInput">
-								<input name="nombre" placeHolder="Nombre:" type="text" data-constraints='@NotEmpty @Required @AlphaSpecial'>
+								<input name="<?php echo $nombre;?>" placeHolder="<?php echo $nombre;?>:" type="text" data-constraints='@NotEmpty @Required @AlphaSpecial'>
 							</div>
 							<div class="tmInput">
-								<input name="pais" placeHolder="Pais:" type="text" data-constraints="@NotEmpty @Required">
+								<input name="<?php echo $pais;?>" placeHolder="<?php echo $pais;?>:" type="text" data-constraints="@NotEmpty @Required">
 							</div>
 						</div>
 						<div class="fl1">
 							<div class="tmInput">
-								<input name="correo" placeHolder="Email:" type="text" data-constraints="@NotEmpty @Required @Email">
+								<input name="<?php echo $correo;?>" placeHolder="<?php echo $correo;?>:" type="text" data-constraints="@NotEmpty @Required @Email">
 							</div>
 							<div class="tmInput mr0">
-								<input name="telefono" placeHolder="Tel&eacute;fono:" type="text" data-constraints="@NotEmpty @Required">
+								<input name="<?php echo $telefono;?>" placeHolder="<?php echo $telefono;?>:" type="text" data-constraints="@NotEmpty @Required">
 							</div>
 						</div>
 						<div class="clear"></div>
-						<strong>Llegada</strong>
+						<strong><?php echo $llegada;?></strong>
 						<label class="tmDatepicker">
 							<input type="text" name="llegada" placeHolder='10/05/2014' data-constraints="@NotEmpty @Required @Date">
 						</label>
 						<div class="clear"></div>
-						<strong>Retorno</strong>
+						<strong><?php echo $retorno;?></strong>
 						<label class="tmDatepicker">
 							<input type="text" name="retorno" placeHolder='20/05/2014' data-constraints="@NotEmpty @Required @Date">
 						</label>
 						<div class="clear"></div>
 						<div class="tmRadio">
-							<p>Tipo de Hospedaje</p>
+							<p><?php echo $hospedaje;?></p>
 							<input name="hospedaje" type="radio" value="Barato" id="tmRadio0" data-constraints='@RadioGroupChecked(name="Comfort", groups=[RadioGroup])' checked/>
-							<span>Barato</span>
+							<span><?php echo $economico;?></span>
 							<input name="hospedaje" type="radio" value="Standart" id="tmRadio1" data-constraints='@RadioGroupChecked(name="Comfort", groups=[RadioGroup])' />
-							<span>Standart</span>
+							<span><?php echo $estandar;?></span>
 							<input name="hospedaje" type="radio" value="Lujo" id="tmRadio2" data-constraints='@RadioGroupChecked(name="Comfort", groups=[RadioGroup])' />
-							<span>Lujo</span>
+							<span><?php echo $lujo;?></span>
 						</div>
 						<div class="clear"></div>
 						<div class="fl1 fl2">
-							<em>Adultos</em>
+							<em><?php echo $adultos;?></em>
 							<select name="adultos" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
 								<option>1</option>
 								<option>1</option>
@@ -379,9 +476,15 @@ function googleTranslateElementInit() {
                                 <option>15</option> 
 							</select>
 							<div class="clear"></div>
+<<<<<<< HEAD
 							<em>Habitaciones</em>
 							<select name="habitaciones" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">								
 								<option>0</option>
+=======
+							<em><?php echo $habitaciones;?></em>
+							<select name="habitaciones" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
+								<option>1</option>
+>>>>>>> a7ff026c185e87d9ecfc203d6341481d8125536a
 								<option>1</option>
 								<option>2</option>
 								<option>3</option>
@@ -395,7 +498,7 @@ function googleTranslateElementInit() {
 							</select>
 						</div>
 						<div class="fl1 fl2">
-							<em>Niños</em>
+							<em><?php echo $ninos;?></em>
 							<select name="ninos" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
 								<option>1</option>
 								<option>1</option>
@@ -420,10 +523,10 @@ function googleTranslateElementInit() {
                         
 						<div class="clear"></div>
 						<div class="tmTextarea">
-							<textarea name="mensaje" placeHolder="Mensaje" data-constraints='@NotEmpty @Required @Length(min=20,max=999999)'></textarea>
+							<textarea name="<?php echo $mensaje;?>" placeHolder="<?php echo $mensaje;?>" data-constraints='@NotEmpty @Required @Length(min=20,max=999999)'></textarea>
 						</div>
 					<div class="formBoton">
-                        <input  type="submit" value="Reservar"  name="enviar" />
+                        <input  type="submit" value="<?php echo $reservas;?>"  name="enviar" />
 					</div>
                     </form>
                     
@@ -455,7 +558,7 @@ $mensaje = $_POST['mensaje'];
  
  
  
-$destinatario = "reservas@wayquistravel.com"; 
+$destinatario = "reservas@itdecsa.com"; 
 $asunto = "RESERVAS";  
 $cuerpo ='
 
@@ -531,13 +634,13 @@ $headers = "MIME-Version: 1.0\r\n";
 $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
 
 //dirección del remitente 
-$headers .= "From: Sistema de reservas <reservas@wayquistravel.com>\r\n"; 
+$headers .= "From: Sistema de reservas <reservas@itdecsa.com>\r\n"; 
 
 //dirección de respuesta, si queremos que sea distinta que la del remitente 
 $headers .= "Reply-To:".$correo."\r\n"; 
 
 //ruta del mensaje desde origen a destino 
-$headers .= "Return-path: reservas@wayquistravel.com\r\n"; 
+$headers .= "Return-path: reservas@itdecsa.com\r\n"; 
 
 //direcciones que recibián copia 
 //$headers .= "Cc: maria@desarrolloweb.com\r\n"; 
@@ -558,7 +661,7 @@ mail($destinatario,$asunto,$cuerpo,$headers);
 ?>                    
 				</div>
 				<div class="grid_5 prefix_1" >
-					<h3 class="extra_wrapper wow bounceInRight animated" data-wow-delay="0.2s" style="text-align:justify;visibility: visible; -webkit-animation-delay: 0.4s;">QUIENES SOMOS</h3>
+					<h3 class="extra_wrapper wow bounceInRight animated" data-wow-delay="0.2s" style="text-align:justify;visibility: visible; -webkit-animation-delay: 0.4s;"><?php echo $titulo2; ?></h3>
 					
 					<div class="extra_wrapper wow bounceInRight animated" data-wow-delay="0.4s" style="text-align:justify;visibility: visible; -webkit-animation-delay: 0.4s;" >						
                         Somos una agencia de viajes dedicado a la ventas de paquetes turísticos donde usted podrá disfrutar de la maravilla y riqueza de nuestro País brindándole un servicio de excelencia, con el profesionalismo que nos caracteriza.                                               
@@ -602,7 +705,7 @@ mail($destinatario,$asunto,$cuerpo,$headers);
 
 
 				<div class="grid_12 wow bounceInLeft animated"  data-wow-delay="1.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
-					<h3 class="head1">Latest News</h3>
+					<h3 class="head1"><?php echo $titulo3; ?></h3>
 				</div>
 				<div class="grid_4 wow bounceInRight animated" data-wow-delay="1.6s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
 					<div class="block1">

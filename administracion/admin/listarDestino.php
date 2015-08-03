@@ -121,7 +121,7 @@ $cont=1;
   <tr  <?php if($eliminado[$j]==1){echo 'class="minimo"';}?> >
   	<td><?php echo $cont; ?></td>
   	<td><?php echo $nombre[$j]; ?></td>
-    <td><?php if($idioma[$j]==1){echo 'Español';} if($idioma[$j]==0){echo 'Ingles';} ?></td>
+    <td><?php if($idioma[$j]==0){echo 'Español';} if($idioma[$j]==1){echo 'Ingles';} ?></td>
 	<td><?php if($eliminado[$j]==1){echo 'Desactivo';} if($eliminado[$j]==0){echo 'Activo';} ?></td>
     
   <td> 
