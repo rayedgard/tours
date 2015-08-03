@@ -146,6 +146,8 @@
 		//botones
 		$boton="READ MORE";
 		$reservas="RESERVE";
+		//etiquetas
+		$precio="Cost";
 		//titulos
 		$titulo1="BOOKING FORM";
 		$titulo2="WHO WE ARE";
@@ -173,7 +175,8 @@
 		//botones
 		$boton="LEER MÁS";
 		$reservas="RESERVAR";
-			
+		//etiquetas
+		$precio="Costo";
 			//titulos
 		$titulo1="FORMULARIO DE RESERVAS";
 		$titulo2="QUIENES SOMOS";
@@ -219,7 +222,7 @@ while($row2 = mysql_fetch_array($paquetes))
 	
 	//------------------------
 	//conuslta para paquetes aleatorios
-	$paquetesAleatorios ="SELECT idPaquete, nombrePaquete, imagen, costo FROM `paquetes` WHERE eliminar='0'  ORDER BY RAND() LIMIT 3"; 
+	$paquetesAleatorios ="SELECT idPaquete, nombrePaquete, imagen, costo FROM `paquetes` WHERE eliminar='0' AND idioma='$i'  ORDER BY RAND() LIMIT 3"; 
 $paquetesAle = mysql_query($paquetesAleatorios,$link);
 	
 		//nombre del titulo
@@ -353,11 +356,10 @@ function googleTranslateElementInit() {
 						<h2 class="wow bounceInRight animated" data-wow-delay="0.8s" style="visibility: visible; -webkit-animation-delay: 0.4s;""><?php echo $nombrePaquete[$j];?></h2>
 
 						<div class="price wow bounceInLeft animated" data-wow-delay="1.0s" visibility: visible; -webkit-animation-delay: 0.4s;">
-							Valor:
-							<span>$<?php echo $costo[$j];?></span>
+							
 						</div>
 
-						<a class="wow bounceInRight animated" data-wow-delay="1.2s" style="visibility: visible; -webkit-animation-delay:0.4s;" href="pages/paquetes/paquete.php?cod=<?php echo $idaPquete[$j];?>"><?php echo $boton; ?></a>
+						<a class="wow bounceInRight animated" data-wow-delay="1.2s" style="visibility: visible; -webkit-animation-delay:0.4s;" href="pages/paquetes/paquete.php?cod=<?php echo $idaPquete[$j];?>&i=<?php echo $i;?>" ><?php echo $boton; ?></a>
 					</div>
 
 				</div>
@@ -386,8 +388,8 @@ function googleTranslateElementInit() {
 
 						<div class="label">
 							<div class="title"><?php echo $nombrePaqueteAl[$k];?></div>
-							<div class="price">FROM<span>$ <?php echo $costoAl[$k];?></span></div>
-							<a href="pages/paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$k];?>"><?php echo $boton; ?></a>
+							<div class="price"><?php echo $precio;?><span>$ <?php echo $costoAl[$k];?></span></div>
+							<a href="pages/paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$k];?>&i=<?php echo $i;?> "><?php echo $boton; ?></a>
 						</div>
 
 
@@ -457,7 +459,11 @@ function googleTranslateElementInit() {
                                 <option>8</option>
                                 <option>9</option>
                                 <option>10</option>
-                                
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option>
 							</select>
 							<div class="clear"></div>
 							<em><?php echo $habitaciones;?></em>
@@ -490,6 +496,11 @@ function googleTranslateElementInit() {
                                 <option>8</option>
                                 <option>9</option>
                                 <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option>
 							</select>
 						</div>
                         
