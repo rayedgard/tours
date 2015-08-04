@@ -196,7 +196,7 @@ while($row1 = mysql_fetch_array($cat))
 			</script>
 
     	</div>  
-     </di> 				
+     </div> 				
         
  </div>
         
