@@ -1273,3 +1273,125 @@ fin opacidad*/
   box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
 }
 /*--- fin iconos de idioma-----*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-----para la galeria de imagenes---------*/
+
+section{
+                width:100%;
+                margin:0 auto;
+            }
+            
+            /*Para que el contenedor muestre elementos aunque estos sean flotantes*/
+            #container:after {
+                content: " ";
+                display: block;
+                height: 0;
+                clear: both;
+            }
+
+            #container{
+                width: 100%;
+                margin:0 auto;
+            }
+
+            /*Estructura de cada componente de la galeria (imagen + descripcion)*/
+            #container li{
+                width:32.3%;
+                height: auto;
+                -webkit-transition: -webkit-transform 1s;
+                display:inline;
+                float:left;
+                margin:0px 1% 0 0;
+                padding: 0;
+            }
+            #container li img{
+                width: 100%;
+                height: auto;
+                box-shadow: 0 0 20px #666;
+                border: 0px solid #FFF
+            }
+            
+            /*Estructura de la descripcion, por defecto no se muestra*/
+            #container li img ~ span{
+                width: 100%;
+                display:block;
+                opacity:0;
+                -webkit-transition: opacity 1s;
+                margin: 0;
+                padding:2px 5px;
+                color:#FFF;
+                background:rgba(0, 0, 0, 0.7);
+                box-shadow: 0 0 10px #666;
+                text-align:center;
+            }
+
+            /*Se muestra la descripcion al posicionar el cursor encima de la imagen*/
+            #container li img:hover + span{
+                opacity:1;
+            }
+            
+            /*Se especifica el comportamiento que tendran las imagenes al posicionar el cursor encima del contenedor*/
+            #container:hover li{
+                opacity: 0.2;
+                -webkit-transform: scale(0.7);
+                -ms-transform: scale(0.7);
+                transform: scale(0.7);
+            }
+            
+            /*Se especifica el comportamiento que tendran la imagen seleccionada*/
+            #container:hover li:hover{
+              opacity: 1;
+              -webkit-transform: scale(1);
+              -ms-transform: scale(1);
+              transform: scale(1);
+            }
+
+            /*Media query de ejemplo para pantallas de alta resolucion
+              pero pueden haber mas, este media query permite mostrar hasta 5 imagenes por filas
+            */
+            @media (min-width:1600px){
+                #container li{
+                    width: 15%;
+                }
+            }
+
+
+
+
+
+
+
+
+
+ .gallery {
+      list-style: none;
+      overflow: hidden;
+      padding: 0;
+      margin: 0;
+    }
+    .gallery li {
+      float: left;
+      margin: 4px;
+    }
+
+
+/*-----fin galeria------*/
