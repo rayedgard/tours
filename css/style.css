@@ -645,7 +645,7 @@ a.link-1:hover {
 footer {
 	display: block;
     padding: 0px 0 60px;
-    color: #a3afba;
+    color: #a3afba; /*letras del información del footer*/
     font-family: 'Open Sans', sans-serif;
 }
 

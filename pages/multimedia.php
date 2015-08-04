@@ -12,7 +12,11 @@
 		<link rel="stylesheet" href="../css/camera.css">				<!-- -->
 		<link rel="stylesheet" href="../css/owl.carousel.css">
 
-	
+
+
+		<link rel="stylesheet" type="text/css" href="../menucssjs/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="../menucssjs/css/component.css" />
+		<script src="../menucssjs/js/modernizr.custom.js"></script>
         
  
 <!--para la galeria-->
@@ -98,15 +102,18 @@
 include_once("../conexion.php");
 	$link = Conectarse();
 	
-$id= $_GET['cod'];
+$id = $_GET['cod'];
 if($id<=0)
 { $id=1;}	
 
 
 
 // consulta para realizar el modificado de la tabla
-$consulta = mysql_query("SELECT nombreCategoria FROM categoriafotos WHERE idCategoriaFoto='$id'",$link);
+$consulta = mysql_query("SELECT nombreCategoria FROM categoriafotos WHERE idCategoriaFoto ='$id'",$link);
 $row = mysql_fetch_array($consulta);
+
+
+
 
 
 
@@ -124,6 +131,10 @@ while($row2 = mysql_fetch_array($rfotos))
 	
 
 	
+
+
+
+
 //conuslta para las categoria de fotos
 $catego ="SELECT  idCategoriaFoto, nombreCategoria FROM categoriafotos ORDER BY RAND()"; 
 $cat = mysql_query($catego,$link);
@@ -151,24 +162,118 @@ while($row1 = mysql_fetch_array($cat))
 
 
 
-<div class="content">
-	<div class="container_12">
+<div class="content" style="width=100%;">
+	<div class="container_13" style="width=100%;">
+	<h3 style="text-align:center;">GALERIA DE FOTOS</h3>
    
-	    <div><!--para los titulos-->
+	  
+	    <div class="container">	
+	    <div class="main clearfix" >
 
-	    	<?php
-				for($k=0;$k<count($nombres);$k++)
-				{
-			?>
-					<a href="multimedia.php?cod=<?php echo $idcat[$k];?>"><?php echo $nombres[$k]; ?></a></li>
-			<?php  } ?>
+				<nav id="menu" class="nav">	
+
+					<ul>
+				 	<?php
+						for($k=0;$k<count($nombres);$k++)
+						{
+						?>
+							<li>
+								<a href="multimedia.php?cod=<?php echo $idcat[$k];?>">
+
+								<span>
+									<?php echo $nombres[$k]; ?>
+								</span>
+
+								</a>
+							</li>
+
+						<?php  } ?>	
+					</ul>
+
+
+					<ul>
+					<li>
+					 <a href="multimedia.php?cod=100"> 
+					 	<span>
+					 		VIDEOS
+					 	</span>
+					 </a>
+					</li>
+
+					</ul>
 
 
 
-	    </div>
+				</nav>
+
+
+			</div>
+
+			</div>
+		
+
+
+
+		<script>
+			//  The function to change the class
+			var changeClass = function (r,className1,className2) {
+				var regex = new RegExp("(?:^|\\s+)" + className1 + "(?:\\s+|$)");
+				if( regex.test(r.className) ) {
+					r.className = r.className.replace(regex,' '+className2+' ');
+			    }
+			    else{
+					r.className = r.className.replace(new RegExp("(?:^|\\s+)" + className2 + "(?:\\s+|$)"),' '+className1+' ');
+			    }
+			    return r.className;
+			};	
+
+			//  Creating our button in JS for smaller screens
+			var menuElements = document.getElementById('menu');
+			menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutoggle" class="navtoogle" aria-hidden="true"><i aria-hidden="true" class="icon-menu"> </i> Menu</button>');
+
+			//  Toggle the class on click to show / hide the menu
+			document.getElementById('menutoggle').onclick = function() {
+				changeClass(this, 'navtoogle active', 'navtoogle');
+			}
+
+			// http://tympanus.net/codrops/2013/05/08/responsive-retina-ready-menu/comment-page-2/#comment-438918
+			document.onclick = function(e) {
+				var mobileButton = document.getElementById('menutoggle'),
+					buttonStyle =  mobileButton.currentStyle ? mobileButton.currentStyle.display : getComputedStyle(mobileButton, null).display;
+
+				if(buttonStyle === 'block' && e.target !== mobileButton && new RegExp(' ' + 'active' + ' ').test(' ' + mobileButton.className + ' ')) {
+					changeClass(mobileButton, 'navtoogle active', 'navtoogle');
+				}
+			}
+		</script>
+	   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!--bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb-->
 	
+			<h3 style="text-align:center; font-size:25px;"><?php echo $row[0]; ?></h3>
+			</br>
     	<div id="container"><!--para las fotos-->
     	
 
@@ -177,7 +282,7 @@ while($row1 = mysql_fetch_array($cat))
 		        for($j=0;$j<count($nombres);$j++)
 				{
 		        ?>
-		          	<li>
+		          	 <li>
 		        	   	<a href="../administracion/imagenes/fotos/<?php echo $row[0]; ?>/<?php echo $nombrefoto[$j]; ?>"> <img src="../administracion/imagenes/fotos/<?php echo $row[0]; ?>/<?php echo $nombrefoto[$j]; ?>">
 		           		</a>
 		             </li>
@@ -185,8 +290,11 @@ while($row1 = mysql_fetch_array($cat))
 			</ul> 
 
 
-			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-			<script src="../js/jquery.lightbox.js"></script>
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+			</script>
+
+			<script src="../js/jquery.lightbox.js">
+			</script>
 
 			<script>
 			  // Initiate Lightbox
@@ -196,6 +304,8 @@ while($row1 = mysql_fetch_array($cat))
 			</script>
 
     	</div>  
+
+
      </div> 				
         
  </div>
@@ -215,6 +325,8 @@ while($row1 = mysql_fetch_array($cat))
 				</div>
 			</div>
 		</footer>
+
+
 		<script>
 		$(function (){
 			$('#bookingForm').bookingForm({

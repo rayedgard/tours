@@ -85,20 +85,92 @@
 
 
 	<body>
+	<!--para los iconos de idioma-->    
+    <a class='flotanteE' href='paquetes.php?i=0' ><img src='../images/esp.png' border="0"/></a>
+    <a class='flotanteI' href='paquetes.php?i=1' ><img src='../images/ing.png' border="0"/></a>
+	<!--fin idioma-->
+
+		 <?php 
+	include_once("../conexion.php");
+	$link = Conectarse();
+	
+
+	//Codigo para discriminar el idioma
+
+	if( $_GET['i']=='' or $_GET['i']=='1')
+	{
+		$i='1';
+	}
+	else
+	{
+		$i='0';
+	}
+
+	
+	if($i==1)
+	{
+		//botones
+		$boton="Read More";
+		
+		//etiquetas
+		$precio="Cost";
+		//titulos
+		$titulo1="PACKAGES";
+		
+		//fromulario de reservas
+	
+
+
+	}
+	if($i==0)
+	{
+		//botones
+		$boton="Leer Más";
+		
+		//etiquetas
+		$precio="Costo";
+			//titulos
+		$titulo1="PAQUETES";
+		
+			//fromulario de reservas
+
+	}
+	//fin discriminacion de idioma
+?>
 <!--==============================header=================================-->
 		<header class="wow bounceInRight animated" data-wow-delay="0.3s" style="visibility: visible; -webkit-animation-delay: 0.4s;" >
 			<div class="container_12">
 				<div class="grid_12 wow bounceInLeft animated" data-wow-delay="0.8s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
 					<div class="menu_block ">
+
+
 						<nav class="horizontal-nav full-width horizontalNav-notprocessed">
-							<ul class="sf-menu " >
-							<li ><a href="../index.php">INICIO</a></li>
-								<li class="current"><a href="paquetes.php">PAQUETES</a></li>
-								<li><a href="multimedia.php">MULTIMEDIA</a></li>
-								<li><a href="blog.php">BLOG</a></li>
-								<li><a href="contactos.php">CONTACTOS</a></li>
-							</ul>
+						<?php  if($i=='1'){echo ' 	
+							<ul class="sf-menu">
+								<li class="current"><a href="../index.php?i='.$i.'">HOME</a></li>
+								<li><a href="paquetes.php?i='.$i.'">PACKAGES</a></li>
+								<li><a href="multimedia.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li><a href="blog.php?i='.$i.'">BLOG</a></li>
+								<li><a href="contactos.php?i='.$i.'">CONTACTS</a></li>
+                        	</ul>
+                        	';}
+                        	else
+                        	{
+                        		echo ' 	
+							<ul class="sf-menu">
+								<li class="current"><a href="../index.php?i='.$i.'">INICIO</a></li>
+								<li><a href="paquetes.php?i='.$i.'">PAQUETES</a></li>
+								<li><a href="multimedia.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li><a href="blog.php?i='.$i.'">BLOG</a></li>
+								<li><a href="contactos.php?i='.$i.'">CONTACTOS</a></li>
+                        	</ul>
+                        	';}
+                        	?>	
+
+
 						</nav>
+
+
 						<div class="clear"></div>
 					</div>
 				</div>
@@ -118,8 +190,7 @@
 
 
 <?php
-	include_once("../conexion.php");
-	$link = Conectarse();
+	
 	//conuslta para paquetes aleatorios
 $paquetesAleatorios ="SELECT idPaquete, nombrePaquete, imagen, costo FROM `paquetes` WHERE eliminar='0'  ORDER BY RAND()"; 
 $paquetesAle = mysql_query($paquetesAleatorios,$link);
@@ -166,7 +237,7 @@ while($row2 = mysql_fetch_array($paquetesAle))
 
 			
 				<div class="banners" style="padding-top:10px; ">
-				<h1 style="text-align:center;font-size:37px;">PAQUETES</h1>
+				<h1 style="text-align:center;font-size:37px;"><?php echo $titulo1; ?></h1>
 
 
                 
@@ -193,8 +264,8 @@ while($row2 = mysql_fetch_array($paquetesAle))
 							 echo $nombrePaqueteAl[$k];
 							 ?>
 							 </div>
-							<div class="price">FROM<span>$ <?php echo $costoAl[$k];?></span></div>
-							<a href="paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$k];?>">Leer más</a>
+							<div class="price"><?php echo $precio; ?><span>$ <?php echo $costoAl[$k];?></span></div>
+							<a href="paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$k];?>&i=<?php echo $i;?>"><?php echo $boton; ?></a>
 							
 						</div>
 					</div>
