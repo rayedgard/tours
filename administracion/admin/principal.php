@@ -183,6 +183,8 @@ $usu=$usuarios[0]." ".$usuarios[1];
 <li class="separator"><span></span></li>
 <li><a class="" href="principal.php?p=2&td=<?php echo $td;?>&q=1&nick=<?php echo $nick1;?>">Gestión de Noticias</a></li>
 <li class="separator"><span></span></li>
+<li><a class="" href="principal.php?p=9&td=<?php echo $td;?>&q=1&nick=<?php echo $nick1;?>">Gestión de Eventos</a></li>
+<li class="separator"><span></span></li>
 <li><a class="" href="principal.php?p=3&td=<?php echo $td;?>&q=1&nick=<?php echo $nick1;?>">Gestión de Publicidad</a></li>
 <li class="separator"><span></span></li>
 
@@ -263,8 +265,8 @@ else
 	<div id="footer">
 		<p class="copyright">
 		<a href="http://www.itdecsa.com" target="_blank">©itdecsa. itdecsa.com <br />
-Apv Capac Mocco A-6<br />
-Teléfonos:             +51 84 272650      ,RPC: 993026679 - 987789722, CORREO ELECTRONICO, informes@itdecsa.com</a>
+Av la cultura 772 int. 205, segundo nivel<br />
+Teléfonos: +51 84 245844, RPC: 993026679 - 987789722, CORREO ELECTRONICO, informes@itdecsa.com</a>
 	</p>
 	</div>
 </body>

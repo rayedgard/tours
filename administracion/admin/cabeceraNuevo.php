@@ -33,11 +33,9 @@ $td=$_GET['td'];
   if($p==8)
   {$titulo="Gestion de Fotografias";}
   if($p==9)
-  {$titulo="Documentos";}
-   if($p==10)
-  {$titulo="Gestión de Paquetes";}
-   if($p==11)
-  {$titulo="Gestión de Destinos";}
+  {$titulo="Gestión de Eventos";}
+
+ 
   
 ?>
 
@@ -120,14 +118,14 @@ Cancelar
 
 				<div class="clr"></div>
 			</div>
-            <!---para el borde inferior-->
+            <!--para el borde inferior-->
 			<div class="b">
 			<div class="b">
 			<div class="b">
             </div>
 			</div>
 			</div>
-            <!----------->
+          
       </div>
    		
         <div class="clr">
@@ -150,14 +148,14 @@ Cancelar
 
   
 
-      <!---para el borde inferior-->
+      <!--para el borde inferior-->
 			<div class="b">
 			<div class="b">
 			<div class="b">
             </div>
 			</div>
 			</div>
-            <!----------->
+         
 
    		</div>
 	
@@ -174,20 +172,9 @@ Cancelar
 
 // consulta para la validacion del sistema
 $link = Conectarse();
-//$consultaSeccion = mysql_query("SELECT COUNT(id) FROM seccion",$link);
-//$resulatadoSeccion = mysql_fetch_array($consultaSeccion);
-//$consultaCategoria = mysql_query("SELECT COUNT(id) FROM categoria",$link);
-//$resulatadoCategoria = mysql_fetch_array($consultaCategoria);
-//$consultaProducto = mysql_query("SELECT COUNT(id) FROM producto",$link);
-//$resulatadoProducto = mysql_fetch_array($consultaProducto);
-//
 
 //para los mensajes de eliminacion
 	$s = $_GET['s'];
-//$consultaCategoria1 = mysql_query("SELECT COUNT(id) FROM categoria WHERE seccion='$s'",$link);
-//$resulatadoCategoria1 = mysql_fetch_array($consultaCategoria1);
-//$consultaProducto1 = mysql_query("SELECT COUNT(id) FROM producto WHERE categoria='$s'",$link);
-//$resulatadoProducto1 = mysql_fetch_array($consultaProducto1);
 
 
 	$e = $_GET['e'];
@@ -355,31 +342,32 @@ $link = Conectarse();
 		  
 		  break;  
 		  
+		   case 9:
+			  if($q==1)
+			  {
+			  include("listarEvento.php");
+			  }
+			  if($q==2)
+			  {
+			  
+			  include("nuevoEvento.php");
+			  }
+			  if($q==3)
+			  {
+			  	  include("modificarEvento.php");
+			  }
+			  if($q==4)
+			  {
+			  	  include("mensaje.php");
+			  }
 		  
+		  break;  
 		  
-		   /*  
-		 case 8:
-			  include("paginas/mapa1.php");
-			  break;
-		  case 9:
-			  include("paginas/mapa2.php");
-			  break;
-		  case 10:
-			  include("paginas/mapa3.php");
-			  break;
-		  case 11:
-			  include("paginas/proyecto1.php");
-			  break;
-		  case 12:
-			  include("paginas/proyecto2.php");
-			  break;
-		  case 13:
-			  include("paginas/proyecto3.php");
-			  break;*/
+	
   } }
   else {
 	  include("portada.php");
   }
-  //fin codigo para isertar paginas ?>
-
-</div>>>
+  //fin codigo para isertar paginas
+?>
+</div>
