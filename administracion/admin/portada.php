@@ -19,26 +19,26 @@ $nick1= encripta($nick,"rayedgard");
 				<div style="float:left;">
 			<div class="icon">
             <a href="principal.php?p=1&td=<?php echo $td;?>&q=1&nick=<?php echo $nick1;?>">
-					<img src="../imagen/video.png" alt="Gestion de Tiendas"  />					<span>Gestión de Videos</span></a>
+					<img src="../imagen/video.png" alt="Gestion de Videos"  />					<span>Gestión de Videos</span></a>
 			</div>
 		</div>
 				<div style="float:left;">
 				  <div class="icon">
                   <a href="principal.php?p=2&td=<?php echo $td;?>&q=1&nick=<?php echo $nick1;?>">
-					<img src="../imagen/noticias.png" alt="Gestion de Clientes"  />					<span>Gestión de Noticias</span></a>
+					<img src="../imagen/noticias.png" alt="Gestion de Notiocias"  />					<span>Gestión de Noticias</span></a>
         </div>
 		</div>
 				<div style="float:left;">
 			<div class="icon">
 				<a href="principal.php?p=3&td=<?php echo $td;?>&q=1&nick=<?php echo $nick1;?>">
-					<img src="../imagen/publicidad.png" alt="Gestion de Proveedores"  />					<span>Gestión de Publicidad</span></a>
+					<img src="../imagen/publicidad.png" alt="Gestion de Publicidad"  />					<span>Gestión de Publicidad</span></a>
 			</div>
 		</div>
         
         <div style="float:left;">
 			<div class="icon">
 				<a href="principal.php?p=4&td=<?php echo $td;?>&q=1&nick=<?php echo $nick1;?>">
-					<img src="../imagen/usuario.png" alt="Añadir un nuevo artículo"  />					<span>Gestión de Usuarios</span></a>
+					<img src="../imagen/usuario.png" alt="Gestión de usuarios"  />					<span>Gestión de Usuarios</span></a>
 			</div>
 		</div>
         
@@ -48,13 +48,13 @@ $nick1= encripta($nick,"rayedgard");
 				<div style="float:left;">
 			<div class="icon">
 				<a href="principal.php?p=5&td=<?php echo $td;?>&q=1&nick=<?php echo $nick1;?>">
-					<img src="../imagen/perfil.png" alt="Gestión de Productos" />					<span>Gestión de Perfiles</span></a>
+					<img src="../imagen/perfil.png" alt="Gestión de Perfiles" />					<span>Gestión de Perfiles</span></a>
 			</div>
 		</div>
 				<div style="float:left;">
 				  <div class="icon">
 				<a href="principal.php?p=6&td=<?php echo $td;?>&q=1&nick=<?php echo $nick1;?>">
-					<img src="../imagen/paquetes.png" alt="Gestión de Compras"  />					<span>Gestión de Paquetes</span></a>
+					<img src="../imagen/paquetes.png" alt="Gestión de Paquetes"  />					<span>Gestión de Paquetes</span></a>
 			</div>
 		</div>
         
@@ -63,7 +63,7 @@ $nick1= encripta($nick,"rayedgard");
 				<div style="float:left;">
 			<div class="icon">
 				<a href="principal.php?p=7&td=<?php echo $td;?>&q=1&nick=<?php echo $nick1;?>">
-					<img src="../imagen/destinos.png" alt="Gestión de Compras" />					<span>Gestión de Destinos</span></a>
+					<img src="../imagen/destinos.png" alt="Gestión de Destinos" />					<span>Gestión de Destinos</span></a>
 			</div>
 		</div>
         
@@ -72,10 +72,15 @@ $nick1= encripta($nick,"rayedgard");
         		<div style="float:left;">
 			<div class="icon">
 				<a href="principal.php?p=8&td=<?php echo $td;?>&q=1&nick=<?php echo $nick1;?>">
-					<img src="../imagen/fotos.png" alt="Reportes"   />					<span>Gestión de Fotos</span></a>
+					<img src="../imagen/fotos.png" alt="Gestion de Fotos"   />					<span>Gestión de Fotos</span></a>
 			</div>
 		</div>
-        
+        <div style="float:left;">
+				  <div class="icon">
+				<a href="principal.php?p=9&q=1">
+					<img src="../imagen/eventos.png" alt="Gestor de Eventos"  />					<span>Gestión de Eventos</span></a>
+			</div>
+		</div>
         
         
         <?php
