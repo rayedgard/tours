@@ -154,10 +154,10 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1
 				<nav class="horizontal-nav full-width horizontalNav-notprocessed">
 						<?php  if($i=='1'){echo ' 	
 							<ul class="sf-menu">
-								<li class="current"><a href="../index.php?i='.$i.'">HOME</a></li>
+								<li><a href="../index.php?i='.$i.'">HOME</a></li>
 								<li><a href="paquetes.php?i='.$i.'">PACKAGES</a></li>
 								<li><a href="multimedia.php?i='.$i.'">MULTIMEDIA</a></li>
-								<li><a href="blog.php?i='.$i.'">BLOG</a></li>
+								<li class="current"><a href="blog.php?i='.$i.'">BLOG</a></li>
 								<li><a href="contactos.php?i='.$i.'">CONTACTS</a></li>
                         	</ul>
                         	';}
@@ -165,10 +165,10 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1
                         	{
                         		echo ' 	
 							<ul class="sf-menu">
-								<li class="current"><a href="../index.php?i='.$i.'">INICIO</a></li>
+								<li ><a href="../index.php?i='.$i.'">INICIO</a></li>
 								<li><a href="paquetes.php?i='.$i.'">PAQUETES</a></li>
 								<li><a href="multimedia.php?i='.$i.'">MULTIMEDIA</a></li>
-								<li><a href="blog.php?i='.$i.'">BLOG</a></li>
+								<li class="current"><a href="blog.php?i='.$i.'">BLOG</a></li>
 								<li><a href="contactos.php?i='.$i.'">CONTACTOS</a></li>
                         	</ul>
                         	';}

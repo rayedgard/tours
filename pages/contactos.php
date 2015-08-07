@@ -240,13 +240,14 @@
 
 
 <nav class="horizontal-nav full-width horizontalNav-notprocessed">
+				
 				<?php  if($i=='1'){echo ' 	
-							<ul class="nav1">
+							<ul class="sf-menu">
 								<li ><a href="../index.php?i='.$i.'">HOME</a></li>
 								<li><a href="events.php?i='.$i.'">ABOUT US</a></li>
 								<li><a href="gallery.php?i='.$i.'">MULTIMEDIA</a></li>
 								<li><a href="blog.php?i='.$i.'">PACKAGES</a></li>
-								<li class="cap"><a href="contact.php?i='.$i.'">CONTACTS</a></li>
+								<li class="current"><a href="contact.php?i='.$i.'">CONTACTS</a></li>
                         	</ul>
                         	';}
                         	else
@@ -257,7 +258,7 @@
 								<li><a href="events.php?i='.$i.'">QUIENES SOMOS</a></li>
 								<li><a href="gallery.php?i='.$i.'">MULTIMEDIA</a></li>
 								<li><a href="blog.php?i='.$i.'">PAQUETES</a></li>
-								<li class="cap"><a href="contact.php?i='.$i.'">CONTACTOS</a></li>
+								<li class="current"><a href="contact.php?i='.$i.'">CONTACTOS</a></li>
                         	</ul>
                         	';}
                         	?>
