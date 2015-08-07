@@ -143,20 +143,131 @@
 
 	</head>
 	<body>
+
+	<!--para los iconos de idioma-->    
+    <a class='flotanteE' href='contactos.php?i=0' ><img src='../images/esp.png' border="0"/></a>
+    <a class='flotanteI' href='contactos.php?i=1' ><img src='../images/ing.png' border="0"/></a>
+	<!--fin idioma-->
+
+		 <?php 
+	include_once("../conexion.php");
+	$link = Conectarse();
+	
+
+	//Codigo para discriminar el idioma
+
+	if( $_GET['i']=='' or $_GET['i']=='1')
+	{
+		$i='1';
+	}
+	else
+	{
+		$i='0';
+	}
+
+	
+	if($i==1)
+	{
+		//botones
+		$boton="Read More";
+	
+		
+		//etiquetas
+		
+		//titulos
+		$titulo1="CONTACTS";
+		$titulo2="CONTACT US";
+		$titulo3="Address";
+		$titulo4="Phone";
+
+			//formulario
+		$titulo5="Name";
+		$titulo6="Email";
+		$titulo7="City";
+		$titulo8="Message";
+		$titulo9="Submit";
+
+		// Descripción
+		$descripcion1="At any time we are always at your service";
+		$descripcion2="Locate us at the following addresses off , please consult we deliver 24 hours a day, 365 days a year";
+		
+			//pie de pagina
+		$politicas="PRIVACY POLICIES";
+		$corporativo="CORPORATE MAIL";
+		$diseno="DESIGN";
+	
+
+
+	}
+	if($i==0)
+	{
+	
+		
+		//etiquetas
+		
+			//titulos
+		$titulo1="CONTACTOS";
+		$titulo2="CONT&Aacute;CTANOS";
+		$titulo3="Direcci&oacute;n";
+		$titulo4="Tel&eacute;fono";
+
+		//formulario
+		$titulo5="Nombre";
+		$titulo6="Correo";
+		$titulo7="Ciudad";
+		$titulo8="Mensaje";
+		$titulo9="Enviar";
+
+			// Descripción
+		$descripcion1="En cualquier momento estamos siempre a su servicio";
+		$descripcion2="Ub&iacute;quenos en las siguientes direciones, no dude en consultar con nosotros lo atenderemos las 24 horas del d&iacute;a, los 365 d&iacute;as del año";
+		
+
+		
+		//pie de pagina
+		$politicas="POLÍTICAS DE PRIVACIDAD";
+		$corporativo="CORREO COORPORATIVO";
+		$diseno="DISEÑO";
+
+	}
+	//fin discriminacion de idioma
+?>
 <!--==============================header=================================-->
 		<header class="wow bounceInRight animated" data-wow-delay="0.3s" style="visibility: visible; -webkit-animation-delay: 0.4s;" >
 			<div class="container_12">
 				<div class="grid_12 wow bounceInLeft animated" data-wow-delay="0.6s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
 					<div class="menu_block">
-						<nav class="horizontal-nav full-width horizontalNav-notprocessed">
+
+
+<nav class="horizontal-nav full-width horizontalNav-notprocessed">
+				<?php  if($i=='1'){echo ' 	
+							<ul class="nav1">
+								<li ><a href="../index.php?i='.$i.'">HOME</a></li>
+								<li><a href="events.php?i='.$i.'">ABOUT US</a></li>
+								<li><a href="gallery.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li><a href="blog.php?i='.$i.'">PACKAGES</a></li>
+								<li class="cap"><a href="contact.php?i='.$i.'">CONTACTS</a></li>
+                        	</ul>
+                        	';}
+                        	else
+                        	{
+                        		echo ' 	
 							<ul class="sf-menu">
-							<li ><a href="../index.php">INICIO</a></li>
-								<li ><a href="paquetes.php">PAQUETES</a></li>
-								<li><a href="multimedia.php">MULTIMEDIA</a></li>
-								<li><a href="blog.php">BLOG</a></li>
-								<li class="current"><a href="contactos.php">CONTACTOS</a></li>
-							</ul>
+								<li ><a href="../index.php?i='.$i.'">INICIO</a></li>
+								<li><a href="events.php?i='.$i.'">QUIENES SOMOS</a></li>
+								<li><a href="gallery.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li><a href="blog.php?i='.$i.'">PAQUETES</a></li>
+								<li class="cap"><a href="contact.php?i='.$i.'">CONTACTOS</a></li>
+                        	</ul>
+                        	';}
+                        	?>
+
+
 						</nav>
+
+
+
+
 						<div class="clear"></div>
 					</div>
 				</div>
@@ -177,19 +288,19 @@
 
 			<div>
 				<div class="grid_5">
-					<h3 class="wow bounceInLeft animated" data-wow-delay="1.1s">CONT&Aacute;CTOS</h3>
+					<h3 class="wow bounceInLeft animated" data-wow-delay="1.1s"><?php echo $titulo1;?></h3>
 					<div>
-						<p class="wow bounceInLeft animated" data-wow-delay="1.3s">En cualquier momento estamos siempre a su servicio <span class="col1"></p>
-						<p class="wow bounceInLeft animated" data-wow-delay="1.5s">Ub&iacute;quenos en las siguientes direciones, no dude en consultar con nosotros lo atenderemos las 24 horas del d&iacute;a, los 365 d&iacute;as del año</p>
+						<p class="wow bounceInLeft animated" data-wow-delay="1.3s"><?php echo $descripcion1;?> <span class="col1"></p>
+						<p class="wow bounceInLeft animated" data-wow-delay="1.5s"><?php echo $descripcion2;?> </p>
 						<div class="clear"></div>
 						
 						<address>
 							<dl class="wow bounceInLeft animated" data-wow-delay="1.7s">
 								<dt>TOURSTRAVEL <br>
-									Direcci&oacute;n: ...<br>
+									<?php echo $titulo3;?> ...<br>
 									Cusco - Per&uacute;.
 								</dt>
-								<dd><span>Tel&eacute;fono:</span>+1 800 559 6580</dd>
+								<dd><span><?php echo $titulo4;?>:</span>+1 800 559 6580</dd>
 								<dd><span>M&oacute;vil:</span>+1 800 603 6035</dd>
 								<dd><span>FAX:</span>+1 800 889 9898</dd>
 								<dd>E-mail: <a href="#" class="col1">contactos@tourstravel.com</a></dd>
@@ -200,35 +311,35 @@
 
 
 				<div class="grid_6 prefix_1 wow bounceInRight animated" data-wow-delay="1.9s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
-					<h3 >CONT&Aacute;CTANOS</h3>
+					<h3 ><?php echo $titulo2;?></h3>
 					<form id="form">
 						<div class="success_wrapper">
 							<div class="success-message">Contact form submitted</div>
 						</div>
 						<label class="name">
-							<input type="text" name="nombre"  placeholder="Nombre:" data-constraints="@Required @JustLetters" />
+							<input type="text" name="nombre"  placeholder="<?php echo $titulo5;?>:" data-constraints="@Required @JustLetters" />
 							<span class="empty-message">*This field is required.</span>
 							<span class="error-message">*This is not a valid name.</span>
 						</label>
 						<label class="email">
-							<input type="text" name="email" placeholder="Email:" data-constraints="@Required @Email" />
+							<input type="text" name="email" placeholder="<?php echo $titulo6;?>:" data-constraints="@Required @Email" />
 							<span class="empty-message">*This field is required.</span>
 							<span class="error-message">*This is not a valid email.</span>
 						</label>
 						<label class="country">
-							<input type="text" name="ciudad" placeholder="Ciudad:" data-constraints="@Required @JustLetters"/>
+							<input type="text" name="ciudad" placeholder="<?php echo $titulo7;?>:" data-constraints="@Required @JustLetters"/>
 							<span class="empty-message">*This field is required.</span>
 							<span class="error-message">*This is not a valid phone.</span>
 						</label>
 						<label class="message">
-							<textarea name="mensaje" placeholder="Mensaje:" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
+							<textarea name="mensaje" placeholder="<?php echo $titulo8;?>:" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
 							<span class="empty-message">*This field is required.</span>
 							<span class="error-message">*The message is too short.</span>
 						</label>
 						<div class="clear"></div>
 						<div class="btns">
 								<div class="formBoton">
-                        			<input  type="submit" value="Enviar"  name="enviar" />
+                        			<input  type="submit" value="<?php echo $titulo9;?>"  name="enviar" />
 								</div>
 						</div>
 					</form>
@@ -359,17 +470,18 @@ mail($destinatario,$asunto,$cuerpo,$headers);
 		<footer>
 			<div class="container_12">
 				<div class="grid_12">
-					<div class="socials wow bounceInRight animated" data-wow-delay="0.4s">
+					<div class="socials wow bounceInRight animated " data-wow-delay="0.2s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
 						<a href="https://www.facebook.com/pages/Wayquistravel/753117348070173?fref=ts" class="fa fa-facebook" target="_blank"></a>
 						<a href="#" class="fa fa-twitter"></a>
 						<a href="#" class="fa fa-google-plus"></a>
 					</div>
-					<div class="copy wow bounceInLeft animated" data-wow-delay="0.6s">
-						(c) 2014 | <a href="#">Pol&iacute;ticas de Privacidad</a>| <a href="http://wayquistravel.com:2095/" target="_blank">Correo Coorporativo</a>  | Diseño <a href="http://www.itdecsa.com/" rel="nofollow" target="_blank">itdecsa.com</a>
+					<div class="copy wow bounceInLeft animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+						(c) 2014 | <a href="#"><?php echo $politicas;?></a>| <a href="http://itdecsa.com:2095/" target="_blank"><?php echo $corporativo;?></a> | <?php echo $diseno;?> <a href="http://www.itdecsa.com/" rel="nofollow" target="_blank">itdecsa.com</a>
 					</div>
 				</div>
 			</div>
 		</footer>
+
 		<script>
 		$(function (){
 			$('#bookingForm').bookingForm({

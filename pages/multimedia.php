@@ -68,20 +68,100 @@
 	</head>
 
 	<body>
+
+	<!--para los iconos de idioma-->    
+    <a class='flotanteE' href='multimedia.php?i=0' ><img src='../images/esp.png' border="0"/></a>
+    <a class='flotanteI' href='multimedia.php?i=1' ><img src='../images/ing.png' border="0"/></a>
+	<!--fin idioma-->
+
+		 <?php 
+	include_once("../conexion.php");
+	$link = Conectarse();
+	
+
+	//Codigo para discriminar el idioma
+
+	if( $_GET['i']=='' or $_GET['i']=='1')
+	{
+		$i='1';
+	}
+	else
+	{
+		$i='0';
+	}
+
+	
+	if($i==1)
+	{
+		//botones
+	
+		
+		//etiquetas
+		
+		//titulos
+		$titulo1="PHOTO GALLERIES";
+		
+			//pie de pagina
+		$politicas="PRIVACY POLICIES";
+		$corporativo="CORPORATE MAIL";
+		$diseno="DESIGN";
+	
+
+
+	}
+	if($i==0)
+	{
+		//botones
+		
+		//etiquetas
+		
+			//titulos
+		$titulo1="GALERIA DE FOTOS";
+		
+		//pie de pagina
+		$politicas="POLÍTICAS DE PRIVACIDAD";
+		$corporativo="CORREO COORPORATIVO";
+		$diseno="DISEÑO";
+
+	}
+	//fin discriminacion de idioma
+?>
 <!--==============================header=================================-->
 	<header class="wow bounceInRight animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;" >
 			<div class="container_12">
 				<div class="grid_12 wow bounceInLeft animated" data-wow-delay="0.6s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
 					<div class="menu_block">
+
+
 						<nav class="horizontal-nav full-width horizontalNav-notprocessed">
+						<?php  if($i=='1'){echo ' 	
 							<ul class="sf-menu">
-								<li ><a href="../index.php">INICIO</a></li>
-								<li><a href="paquetes.php">PAQUETES</a></li>
-								<li class="current"><a href="multimedia.php">MULTIMEDIA</a></li>
-								<li><a href="blog.php">BLOG</a></li>
-								<li><a href="contactos.php">CONTACTOS</a></li>
-							</ul>
+								<li class="current"><a href="../index.php?i='.$i.'">HOME</a></li>
+								<li><a href="paquetes.php?i='.$i.'">PACKAGES</a></li>
+								<li><a href="multimedia.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li><a href="blog.php?i='.$i.'">BLOG</a></li>
+								<li><a href="contactos.php?i='.$i.'">CONTACTS</a></li>
+                        	</ul>
+                        	';}
+                        	else
+                        	{
+                        		echo ' 	
+							<ul class="sf-menu">
+								<li class="current"><a href="../index.php?i='.$i.'">INICIO</a></li>
+								<li><a href="paquetes.php?i='.$i.'">PAQUETES</a></li>
+								<li><a href="multimedia.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li><a href="blog.php?i='.$i.'">BLOG</a></li>
+								<li><a href="contactos.php?i='.$i.'">CONTACTOS</a></li>
+                        	</ul>
+                        	';}
+                        	?>	
+
+
 						</nav>
+
+
+
+
 						<div class="clear"></div>
 					</div>
 				</div>
@@ -164,7 +244,7 @@ while($row1 = mysql_fetch_array($cat))
 
 <div class="content" style="width=100%;">
 	<div class="container_13" style="width=100%;">
-	<h3 style="text-align:center;">GALERIA DE FOTOS</h3>
+	<h3 style="text-align:center;"><?php echo $titulo1;?></h3>
    
 	  
 	    <div class="container">	
@@ -178,7 +258,7 @@ while($row1 = mysql_fetch_array($cat))
 						{
 						?>
 							<li>
-								<a href="multimedia.php?cod=<?php echo $idcat[$k];?>">
+								<a href="multimedia.php?cod=<?php echo $idcat[$k];?>&i=<?php echo $i;?>" >
 
 								<span>
 									<?php echo $nombres[$k]; ?>
@@ -311,16 +391,16 @@ while($row1 = mysql_fetch_array($cat))
  </div>
         
 <!--==============================footer=================================-->
-		<footer>
+			<footer>
 			<div class="container_12">
 				<div class="grid_12">
-					<div class="socials wow bounceInRight animated" data-wow-delay="0.4s">
+					<div class="socials wow bounceInRight animated " data-wow-delay="0.2s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
 						<a href="https://www.facebook.com/pages/Wayquistravel/753117348070173?fref=ts" class="fa fa-facebook" target="_blank"></a>
 						<a href="#" class="fa fa-twitter"></a>
 						<a href="#" class="fa fa-google-plus"></a>
 					</div>
-					<div class="copy wow bounceInLeft animated" data-wow-delay="0.8">
-						(c) 2014 | <a href="#">Pol&iacute;ticas de Privacidad</a>| <a href="http://wayquistravel.com:2095/" target="_blank">Correo Coorporativo</a>  | Diseño <a href="http://www.itdecsa.com/" rel="nofollow" target="_blank">itdecsa.com</a>
+					<div class="copy wow bounceInLeft animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+						(c) 2014 | <a href="#"><?php echo $politicas;?></a>| <a href="http://itdecsa.com:2095/" target="_blank"><?php echo $corporativo;?></a> | <?php echo $diseno;?> <a href="http://www.itdecsa.com/" rel="nofollow" target="_blank">itdecsa.com</a>
 					</div>
 				</div>
 			</div>

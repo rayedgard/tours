@@ -342,7 +342,7 @@ function googleTranslateElementInit() {
 
 				<div class="grid_12  wow bounceInLeft animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
 					<h1>
-						<a href="index.php">
+						<a href="index.php&i=<?php echo $i;?>" >
 							<img src="images/logo.png" alt="TOURS TRAVEL">
 						</a>
 					</h1>

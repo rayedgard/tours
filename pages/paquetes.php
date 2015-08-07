@@ -117,7 +117,10 @@
 		//titulos
 		$titulo1="PACKAGES";
 		
-		//fromulario de reservas
+			//pie de pagina
+		$politicas="PRIVACY POLICIES";
+		$corporativo="CORPORATE MAIL";
+		$diseno="DESIGN";
 	
 
 
@@ -132,7 +135,10 @@
 			//titulos
 		$titulo1="PAQUETES";
 		
-			//fromulario de reservas
+		//pie de pagina
+		$politicas="POLÍTICAS DE PRIVACIDAD";
+		$corporativo="CORREO COORPORATIVO";
+		$diseno="DISEÑO";
 
 	}
 	//fin discriminacion de idioma
@@ -283,18 +289,21 @@ while($row2 = mysql_fetch_array($paquetesAle))
 <!--==============================footer=================================-->
 		<footer>
 			<div class="container_12">
-				<div class="grid_12 ">
-					<div class="socials wow bounceInRight animated" data-wow-delay="0.2s" style="text-align:justify;visibility: visible; -webkit-animation-delay: 0.4s;">
+				<div class="grid_12">
+					<div class="socials wow bounceInRight animated " data-wow-delay="0.2s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
 						<a href="https://www.facebook.com/pages/Wayquistravel/753117348070173?fref=ts" class="fa fa-facebook" target="_blank"></a>
 						<a href="#" class="fa fa-twitter"></a>
 						<a href="#" class="fa fa-google-plus"></a>
 					</div>
-					<div class="copy wow bounceInLeft animated" data-wow-delay="0.2s" style="text-align:justify;visibility: visible; -webkit-animation-delay: 0.4s;">
-						(c) 2014 | <a href="#">Pol&iacute;ticas de Privacidad</a>| <a href="http://wayquistravel.com:2095/" target="_blank">Correo Coorporativo</a>  | Diseño <a href="http://www.itdecsa.com/" rel="nofollow" target="_blank">itdecsa.com</a>
+					<div class="copy wow bounceInLeft animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+						(c) 2014 | <a href="#"><?php echo $politicas;?></a>| <a href="http://itdecsa.com:2095/" target="_blank"><?php echo $corporativo;?></a> | <?php echo $diseno;?> <a href="http://www.itdecsa.com/" rel="nofollow" target="_blank">itdecsa.com</a>
 					</div>
 				</div>
 			</div>
 		</footer>
+
+
+		
 		<script>
 		$(function (){
 			$('#bookingForm').bookingForm({

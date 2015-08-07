@@ -101,20 +101,110 @@
 
 	</head>
 	<body>
+	<!--para los iconos de idioma-->    
+    <a class='flotanteE' href='paquete.php?i=0' ><img src='../../images/esp.png' border="0"/></a>
+    <a class='flotanteI' href='paquete.php?i=1' ><img src='../../images/ing.png' border="0"/></a>
+	<!--fin idioma-->
+
+		 <?php 
+	include_once("../../conexion.php");
+	$link = Conectarse();
+	
+
+	//Codigo para discriminar el idioma
+
+	if( $_GET['i']=='' or $_GET['i']=='1')
+	{
+		$i='1';
+	}
+	else
+	{
+		$i='0';
+	}
+
+	if($i==1)
+	{
+		//botones
+		$boton="Read More";
+	
+		
+		//etiquetas
+		
+		//titulos
+		$titulo1="PACKAGES";
+		$titulo2="OTHERS PACKAGES";
+		$titulo3="ASSOCIATED DESTINATIONS";
+		
+
+		
+			//pie de pagina
+		$politicas="PRIVACY POLICIES";
+		$corporativo="CORPORATE MAIL";
+		$diseno="DESIGN";
+	
+
+
+	}
+	if($i==0)
+	{
+	
+		
+		//etiquetas
+		
+			//titulos
+		$titulo1="PAQUETES";
+		$titulo2="OTROS PAQUETES";
+		$titulo3="DESTINOS ASOCIADOS";
+		
+
+	
+
+		
+		//pie de pagina
+		$politicas="POLÍTICAS DE PRIVACIDAD";
+		$corporativo="CORREO COORPORATIVO";
+		$diseno="DISEÑO";
+
+	}
+	//fin discriminacion de idioma
+	
+?>
 <!--==============================header=================================-->
 		<header class="wow bounceInRight animated" data-wow-delay="0.3s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
 			<div class="container_12">
 				<div class="grid_12 wow fadeInUpBig animated animated" data-wow-delay="0.2s">
 					<div class="menu_block">
+
+
+
 						<nav class="horizontal-nav full-width horizontalNav-notprocessed">
+						<?php  if($i=='1'){echo ' 	
 							<ul class="sf-menu">
-								<li ><a href="../../index.php">INICIO</a></li>
-								<li class="current"><a href="../paquetes.php">PAQUETES</a></li>
-								<li><a href="../multimedia.php">MULTIMEDIA</a></li>
-								<li><a href="../blog.php">BLOG</a></li>
-								<li><a href="../contactos.php">CONTACTOS</a></li>
-							</ul>
+								<li class="current"><a href="../../index.php?i='.$i.'">HOME</a></li>
+								<li><a href="../paquetes.php?i='.$i.'">PACKAGES</a></li>
+								<li><a href="../multimedia.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li><a href="../blog.php?i='.$i.'">BLOG</a></li>
+								<li><a href="../contactos.php?i='.$i.'">CONTACTS</a></li>
+                        	</ul>
+                        	';}
+                        	else
+                        	{
+                        		echo ' 	
+							<ul class="sf-menu">
+								<li class="current"><a href="../../index.php?i='.$i.'">INICIO</a></li>
+								<li><a href="../paquetes.php?i='.$i.'">PAQUETES</a></li>
+								<li><a href="../multimedia.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li><a href="../blog.php?i='.$i.'">BLOG</a></li>
+								<li><a href="../contactos.php?i='.$i.'">CONTACTOS</a></li>
+                        	</ul>
+                        	';}
+                        	?>	
+
+
 						</nav>
+
+
+
 						<div class="clear"></div>
 					</div>
 				</div>
@@ -130,43 +220,10 @@
 <!--==============================Content=================================-->
 
 
-
-
-
-
-
-     <!--------------para el idioma----------->
-     
-     <!--
-		 <div class="info">
-    	<a href="#" class="back">
-        
-         <div id="google_translate_element"></div><script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-}
-</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-           
-        </a>
-    </div>
-        
-        -->
-        <!-----------------fin idioma-------------->
-        
-
-
-
-
-
-
-
-
-
-
 		<div class="content"><div class="ic">More Website Templates @ itdecsa.com - February 10, 2014!</div>
 			<div class="container_12">
 				<div class="grid_8">
-					<h3 class="wow bounceInLeft" data-wow-delay="0.4s">PAQUETES</h3>
+					<h3 class="wow bounceInLeft" data-wow-delay="0.4s"><?php echo $titulo1;?></h3>
 	
     
     <?php
@@ -219,23 +276,23 @@ $row = mysql_fetch_array($consulta);
 					
                 </div>
 				<div class="grid_3 prefix_1">
-					<h5 class=" wow bounceInRight animated" data-wow-delay="0.4s">OTROS PAQUETES</h5>
+					<h5 class=" wow bounceInRight animated" data-wow-delay="0.4s"><?php echo $titulo2;?></h5>
 					<ul class="list">
                     
                     	   <?php
 			  				for($k=0;$k<count($idPaqueteAl);$k++)
 			  				{
 			   				?>
-								<li class=" wow bounceInRight animated" data-wow-delay="0.4s"><a href="paquete.php?cod=<?php echo $idPaqueteAl[$k];?>"><?php echo $nombrePaqueteAl[$k]; ?></a></li>
+								<li class=" wow bounceInRight animated" data-wow-delay="0.4s"><a href="paquete.php?cod=<?php echo $idPaqueteAl[$k];?>&i=<?php echo $i;?>"><?php echo $nombrePaqueteAl[$k]; ?></a></li>
 				
                				<?php  } ?>
                 	</ul>
-					<a href="../paquetes.php" class="link1 wow bounceInRight animated" data-wow-delay="0.5">VIEW A<span class="low">ll</span></a>
+					
 				</div>
                 
                 <!--====================para los destinos===================================---->       
           <div class="grid_3 prefix_1">
-					<h5 class=" wow bounceInRight animated" data-wow-delay="0.6s">DESTINOS ASOCIADOS</h5>
+					<h5 class=" wow bounceInRight animated" data-wow-delay="0.6s"><?php echo $titulo3;?></h5>
                 
 					   <?php
 					   
@@ -264,7 +321,7 @@ while($row2 = mysql_fetch_array($rdestinos))
 			   ?>
                 
              
-						<a href="destino.php?cod=<?php echo $id; ?>&cod1=<?php echo $idDestino[$k]; ?>"> <img class="destinos" src="../../administracion/imagenes/destinos/<?php echo $imagenDestino[$k];?>" alt=""></a>
+						<a href="destino.php?cod=<?php echo $id; ?>&cod1=<?php echo $idDestino[$k]; ?>&i=<?php echo $i;?>"> <img class="destinos" src="../../administracion/imagenes/destinos/<?php echo $imagenDestino[$k];?>" alt=""></a>
 							<div class="title"><?php echo $nombreDestino[$k];?></div>
 					<br/>
 				
@@ -293,20 +350,23 @@ while($row2 = mysql_fetch_array($rdestinos))
         
         
 <!--==============================footer=================================-->
-		<footer>
+			<footer>
 			<div class="container_12">
 				<div class="grid_12">
-					<div class="socials wow bounceInRight animated" data-wow-delay="0.2s" >
+					<div class="socials wow bounceInRight animated " data-wow-delay="0.2s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
 						<a href="https://www.facebook.com/pages/Wayquistravel/753117348070173?fref=ts" class="fa fa-facebook" target="_blank"></a>
 						<a href="#" class="fa fa-twitter"></a>
 						<a href="#" class="fa fa-google-plus"></a>
 					</div>
-					<div class="copy wow bounceInLeft animated" data-wow-delay="0.2s">
-						(c) 2014 | <a href="#">Pol&iacute;ticas de Privacidad</a>| <a href="http://wayquistravel.com:2095/" target="_blank">Correo Coorporativo</a>  | Diseño <a href="http://www.itdecsa.com/" rel="nofollow" target="_blank">itdecsa.com</a>
+					<div class="copy wow bounceInLeft animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+						(c) 2014 | <a href="#"><?php echo $politicas;?></a>| <a href="http://itdecsa.com:2095/" target="_blank"><?php echo $corporativo;?></a> | <?php echo $diseno;?> <a href="http://www.itdecsa.com/" rel="nofollow" target="_blank">itdecsa.com</a>
 					</div>
 				</div>
 			</div>
 		</footer>
+
+
+
 		<script>
 		$(function (){
 			$('#bookingForm').bookingForm({
