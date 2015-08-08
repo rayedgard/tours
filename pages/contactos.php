@@ -241,13 +241,13 @@
 
 <nav class="horizontal-nav full-width horizontalNav-notprocessed">
 				
-				<?php  if($i=='1'){echo ' 	
+			<?php  if($i=='1'){echo ' 	
 							<ul class="sf-menu">
-								<li ><a href="../index.php?i='.$i.'">HOME</a></li>
-								<li><a href="events.php?i='.$i.'">ABOUT US</a></li>
-								<li><a href="gallery.php?i='.$i.'">MULTIMEDIA</a></li>
-								<li><a href="blog.php?i='.$i.'">PACKAGES</a></li>
-								<li class="current"><a href="contact.php?i='.$i.'">CONTACTS</a></li>
+								<li><a href="../index.php?i='.$i.'">HOME</a></li>
+								<li><a href="paquetes.php?i='.$i.'">PACKAGES</a></li>
+								<li><a href="multimedia.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li><a href="blog.php?i='.$i.'">BLOG</a></li>
+								<li class="current"><a href="contactos.php?i='.$i.'">CONTACTS</a></li>
                         	</ul>
                         	';}
                         	else
@@ -255,13 +255,13 @@
                         		echo ' 	
 							<ul class="sf-menu">
 								<li ><a href="../index.php?i='.$i.'">INICIO</a></li>
-								<li><a href="events.php?i='.$i.'">QUIENES SOMOS</a></li>
-								<li><a href="gallery.php?i='.$i.'">MULTIMEDIA</a></li>
-								<li><a href="blog.php?i='.$i.'">PAQUETES</a></li>
-								<li class="current"><a href="contact.php?i='.$i.'">CONTACTOS</a></li>
+								<li><a href="paquetes.php?i='.$i.'">PAQUETES</a></li>
+								<li><a href="multimedia.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li ><a href="blog.php?i='.$i.'">BLOG</a></li>
+								<li class="current"><a href="contactos.php?i='.$i.'">CONTACTOS</a></li>
                         	</ul>
                         	';}
-                        	?>
+                        	?>	
 
 
 						</nav>
