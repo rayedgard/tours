@@ -299,7 +299,7 @@ $row = mysql_fetch_array($consulta);
 					   
 					   	//conuslta para paquetes aleatorios
 $destinos ="SELECT a.idDestino, a.imagenDestino, a.nombreDestino FROM destinos a 
-INNER JOIN destinosporpaquete b ON a.idDestino=b.idDestino WHERE b.idPaquete='$id' AND eliminar='0'  ORDER BY RAND()"; 
+INNER JOIN destinosporpaquete b ON a.idDestino=b.idDestino WHERE b.idPaquete='$id' AND eliminar='0' AND a.idioma='$i'  ORDER BY RAND()"; 
 $rdestinos = mysql_query($destinos,$link);
 	
 		//nombre del titulo

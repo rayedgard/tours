@@ -198,7 +198,7 @@
 <?php
 	
 	//conuslta para paquetes aleatorios
-$paquetesAleatorios ="SELECT idPaquete, nombrePaquete, imagen, costo FROM `paquetes` WHERE eliminar='0'  ORDER BY RAND()"; 
+$paquetesAleatorios ="SELECT idPaquete, nombrePaquete, imagen, costo FROM `paquetes` WHERE eliminar='0' AND idioma='$i'  ORDER BY RAND()"; 
 $paquetesAle = mysql_query($paquetesAleatorios,$link);
 	
 		//nombre del titulo

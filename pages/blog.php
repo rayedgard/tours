@@ -240,7 +240,7 @@ include_once("../conexion.php");
 	$link = Conectarse();
 	//conuslta para paquetes aleatorios
 	//conuslta para paquetes aleatorios
-$paquetesAleatorios ="SELECT idPaquete, nombrePaquete FROM `paquetes` WHERE eliminar='0'  ORDER BY RAND()"; 
+$paquetesAleatorios ="SELECT idPaquete, nombrePaquete FROM `paquetes` WHERE eliminar='0' AND idioma='$i' ORDER BY RAND()"; 
 $paquetesAle = mysql_query($paquetesAleatorios,$link);
 	
 		//nombre del titulo

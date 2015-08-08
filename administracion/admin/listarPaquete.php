@@ -272,7 +272,7 @@ $cont=1;
     <a href="principal.php?p=<?php echo $p;?>&nick=<?php echo $nick1;?>&td=<?php echo $td;?>&q=3&cod=<?php echo $id[$j];?>" title="MODIFICAR"><img src="../imagen/modificar.png"></a>
     </td>
      <td>
-        <a href="javascript:Abrir_ventana('asignaDestinos.php?id=<?php echo $id[$j];?>&nick=<?php echo $nick1;?>&td=<?php echo $td;?>&n=<?php echo $nombrePaquete[$j];?>')" title="Asignación de Destinos a Paquetes"><img src="../imagen/asignar.png"></a>
+        <a href="javascript:Abrir_ventana('asignaDestinos.php?id=<?php echo $id[$j];?>&nick=<?php echo $nick1;?>&td=<?php echo $td;?>&n=<?php echo $nombrePaquete[$j];?>&i=<?php echo $idioma[$j];?>')" title="Asignación de Destinos a Paquetes"><img src="../imagen/asignar.png"></a>
     </td>
   </tr>
 
