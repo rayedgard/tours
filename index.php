@@ -279,7 +279,7 @@ while($row2 = mysql_fetch_array($paquetesAle))
 
 
 //conuslta para eventos
-$consultaEventos ="SELECT id,nombre,descripcion,MONTHNAME(fecha),DAY(fecha) FROM eventos WHERE eliminar='0' AND idioma='$i'  ORDER BY RAND() LIMIT 3"; 
+$consultaEventos ="SELECT id,nombre,descripcion,MONTHNAME(fecha),DAY(fecha) FROM eventos WHERE eliminar='0' AND idioma='$i'  ORDER BY fecha DESC LIMIT 3"; 
 $eventos = mysql_query($consultaEventos,$link);
 	
 		//nombre del titulo
