@@ -99,7 +99,7 @@
 		//etiquetas
 		
 		//titulos
-		$titulo1="PACKAGES";
+		$titulo1="DESTINATIONS";
 		$titulo2="OTHERS PACKAGES";
 		$titulo3="ASSOCIATED DESTINATIONS";
 		
@@ -120,7 +120,7 @@
 		//etiquetas
 		
 			//titulos
-		$titulo1="PAQUETES";
+		$titulo1="DESTINOS";
 		$titulo2="OTROS PAQUETES";
 		$titulo3="DESTINOS ASOCIADOS";
 		
