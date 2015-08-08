@@ -20,6 +20,7 @@
 <div class="asignar">
 <?php
 $codigo=$_GET['id'];
+$i=$_GET['i'];
 $n=$_GET['n'];
 ?>
 
@@ -47,7 +48,7 @@ while($row = mysql_fetch_array($check))
  
  
  
-$consultaDestino ="SELECT idDestino,nombreDestino FROM destinos WHERE eliminar='0' ORDER BY nombreDestino ASC "; 
+$consultaDestino ="SELECT idDestino,nombreDestino FROM destinos WHERE eliminar='0' and idioma='$i' ORDER BY nombreDestino ASC "; 
 $resultadoDestino = mysql_query($consultaDestino,$link);
 
 	//nombre del titulo
