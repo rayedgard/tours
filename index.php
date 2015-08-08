@@ -269,7 +269,50 @@ while($row2 = mysql_fetch_array($paquetesAle))
  			 $count=+4;
 		 } 
 
+	
+
+
+
+
+
+
+
+
+//conuslta para eventos
+$consultaEventos ="SELECT id,nombre,descripcion,MONTHNAME(fecha),DAY(fecha) FROM eventos WHERE eliminar='0' AND idioma='$i'  ORDER BY RAND() LIMIT 3"; 
+$eventos = mysql_query($consultaEventos,$link);
+	
+		//nombre del titulo
+	$idEvento=array();
+	$nombreEvento=array();
+	$descEvento=array();
+	$mes=array();
+	$dia=array();
+
+while($row2 = mysql_fetch_array($eventos))
+		{
+			array_push($idEvento,$row2[0]);
+			array_push($nombreEvento,$row2[1]);
+			array_push($descEvento,$row2[2]);
+			array_push($mes,$row2[3]);
+			array_push($dia,$row2[4]);
+		}	
+
+
 	?>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--==============================header=================================-->
 		
         <header>
@@ -700,33 +743,32 @@ mail($destinatario,$asunto,$cuerpo,$headers);
 				<div class="grid_12 wow bounceInLeft animated"  data-wow-delay="1.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
 					<h3 class="head1"><?php echo $titulo3; ?></h3>
 				</div>
+
+
+				<?php
+			  for($k=0;$k<count($idEvento);$k++)
+			  {
+			   ?>
+
+
 				<div class="grid_4 wow bounceInRight animated" data-wow-delay="1.6s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
 					<div class="block1">
-						<time datetime="2014-01-01">10<span>Jan</span></time>
+						<time datetime="2014-01-01"><?php echo $dia[$k];?><span><?php echo substr($mes[$k],0,3);?></span></time>
 						<div class="extra_wrapper">
-							<div class="text1 col1"><a href="#">Aliquam nibh</a></div>
-							Proin pharetra luctus diam, any scelerisque eros convallisumsan. Maecenas vehicula egestas
+							<div class="text1 col1"><a href="#"><?php echo $nombreEvento[$k];?></a></div>
+							<?php echo substr( strip_tags($descEvento[$k]) ,0,90)."...";?>
 						</div>
 					</div>
 				</div>
-				<div class="grid_4 wow bounceInRight animated" data-wow-delay="1.8s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
-					<div class="block1">
-						<time datetime="2014-01-01">21<span>Jan</span></time>
-						<div class="extra_wrapper">
-							<div class="text1 col1"><a href="#">Etiam dui eros</a></div>
-							Any scelerisque eros vallisumsan. Maecenas vehicula egestas natis. Duis massa elit, auctor non
-						</div>
-					</div>
-				</div>
-				<div class="grid_4 wow bounceInRight animated" data-wow-delay="2.0s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
-					<div class="block1">
-						<time datetime="2014-01-01">15<span>Feb</span></time>
-						<div class="extra_wrapper">
-							<div class="text1 col1"><a href="#">uamnibh Edeto</a></div>
-							Ros convallisumsan. Maecenas vehicula egestas venenatis. Duis massa elit, auctor non
-						</div>
-					</div>
-				</div>
+
+				<?php 
+					}
+
+				?>
+
+
+
+
 			</div>
 		</div>
 <!--==============================footer=================================-->
