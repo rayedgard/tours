@@ -158,6 +158,7 @@ ul.list+h3.head1 {
 ul.list li {
     font-size: 18px;
     padding-left: 21px;
+    background: url(../images/marker.png) 0 6px no-repeat;
     
   
 

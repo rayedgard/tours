@@ -274,7 +274,7 @@ while($row2 = mysql_fetch_array($paquetesAle))
                 
                 <div class="grid_3 prefix_1">
 					<h5 class="wow bounceInRight animated" data-wow-delay="0.3s"><?php echo $titulo2;?></h5>
-					<ul class="lis wow bounceInRight animated" data-wow-delay="0.6s">
+					<ul class="list wow bounceInRight animated" data-wow-delay="0.6s">
                     
                     	   <?php
 			  				for($k=0;$k<count($idPaqueteAl);$k++)
