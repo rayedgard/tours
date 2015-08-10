@@ -33,6 +33,8 @@
 			});
 		</script>
 
+
+
 		<script>
 			$(document).ready(function(){
 			jQuery('#camera_wrap').camera({
@@ -60,6 +62,8 @@
 			});
 		</script>
 
+
+
 		<script type="text/javascript" src="../../js/move-top.js"></script>
 		<script type="text/javascript" src="../../js/easing.js"></script>
 
@@ -71,6 +75,7 @@
 				});
 			});
 		</script>
+
 		<!---End-smoth-scrolling---->
 
 
@@ -92,23 +97,14 @@
 
 
 
-
-
-
-
-
-
-
 	</head>
 	<body>
-	<!--para los iconos de idioma-->    
-    <a class='flotanteE' href='paquete.php?i=0' ><img src='../../images/esp.png' border="0"/></a>
-    <a class='flotanteI' href='paquete.php?i=1' ><img src='../../images/ing.png' border="0"/></a>
-	<!--fin idioma-->
-
-		 <?php 
+	
+	
+	<?php 
 	include_once("../../conexion.php");
 	$link = Conectarse();
+	$id= $_GET['cod'];
 	
 
 	//Codigo para discriminar el idioma
@@ -126,7 +122,6 @@
 	{
 		//botones
 		$boton="Read More";
-	
 		
 		//etiquetas
 		
@@ -134,21 +129,16 @@
 		$titulo1="PACKAGES";
 		$titulo2="OTHERS PACKAGES";
 		$titulo3="ASSOCIATED DESTINATIONS";
-		
-
-		
+				
 			//pie de pagina
 		$politicas="PRIVACY POLICIES";
 		$corporativo="CORPORATE MAIL";
 		$diseno="DESIGN";
-	
-
 
 	}
 	if($i==0)
 	{
 	
-		
 		//etiquetas
 		
 			//titulos
@@ -156,26 +146,66 @@
 		$titulo2="OTROS PAQUETES";
 		$titulo3="DESTINOS ASOCIADOS";
 		
-
-	
-
-		
 		//pie de pagina
 		$politicas="POLÍTICAS DE PRIVACIDAD";
 		$corporativo="CORREO COORPORATIVO";
 		$diseno="DISEÑO";
 
 	}
-	//fin discriminacion de idioma
+	//fin discriminacion de idioma	
+	
+	
+
+
+	//conuslta para paquetes aleatorios
+	$paquetesAleatorios ="SELECT idPaquete, nombrePaquete FROM `paquetes` WHERE eliminar='0' AND idioma='$i' ORDER BY RAND()"; 
+	$paquetesAle = mysql_query($paquetesAleatorios,$link);
+	
+		//nombre del titulo
+	$idPaqueteAl=array();
+	$nombrePaqueteAl=array();
+
+	while($row2 = mysql_fetch_array($paquetesAle))
+	{
+		array_push($idPaqueteAl,$row2[0]);
+		array_push($nombrePaqueteAl,$row2[1]);
+	}
+
+	// consulta para realizar el modificado de la tabla
+	$consulta = mysql_query("SELECT nombrePaquete, imagen, descripcion, costo FROM paquetes WHERE eliminar=0 AND idioma='$i' AND idPaquete='$id'",$link);
+	$row = mysql_fetch_array($consulta);
+
+	//conuslta para paquetes aleatorios
+	$destinos ="SELECT a.idDestino, a.imagenDestino, a.nombreDestino FROM destinos a 
+	INNER JOIN destinosporpaquete b ON a.idDestino=b.idDestino WHERE b.idPaquete='$id' AND eliminar='0' AND a.idioma='$i'  ORDER BY RAND()"; 
+	$rdestinos = mysql_query($destinos,$link);
+	
+	//nombre del titulo
+	$idDestino=array();
+	$imagenDestino=array();
+	$nombreDestino=array();
+
+	while($row2 = mysql_fetch_array($rdestinos))
+	{
+		array_push($idDestino,$row2[0]);
+		array_push($imagenDestino,$row2[1]);
+		array_push($nombreDestino,$row2[2]);
+	}
 	
 ?>
+
+<!--para los iconos de idioma-->    
+
+
+ <a class='flotanteE' href='../../index.php?i=0' ><img src='../../images/esp.png' border="0"/></a>
+    <a class='flotanteI' href='../../index.php?i=1' ><img src='../../images/ing.png' border="0"/></a> 
+	<!--fin idioma-->
+
 <!--==============================header=================================-->
 		<header class="wow bounceInRight animated" data-wow-delay="0.3s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
 			<div class="container_12">
 				<div class="grid_12 wow fadeInUpBig animated animated" data-wow-delay="0.2s">
 					<div class="menu_block">
-
-
 
 						<nav class="horizontal-nav full-width horizontalNav-notprocessed">
 						<?php  if($i=='1'){echo ' 	
@@ -199,11 +229,7 @@
                         	</ul>
                         	';}
                         	?>	
-
-
 						</nav>
-
-
 
 						<div class="clear"></div>
 					</div>
@@ -223,43 +249,8 @@
 		<div class="content"><div class="ic">More Website Templates @ itdecsa.com - February 10, 2014!</div>
 			<div class="container_12">
 				<div class="grid_8">
-					<h3 class="wow bounceInLeft" data-wow-delay="0.4s"><?php echo $titulo1;?></h3>
-	
-    
-    <?php
-	
-	include_once("../../conexion.php");
-	$link = Conectarse();
-$id= $_GET['cod'];
-
-
-	//conuslta para paquetes aleatorios
-$paquetesAleatorios ="SELECT idPaquete, nombrePaquete FROM `paquetes` WHERE eliminar='0' AND idioma='$i' ORDER BY RAND()"; 
-$paquetesAle = mysql_query($paquetesAleatorios,$link);
-	
-		//nombre del titulo
-	$idPaqueteAl=array();
-	$nombrePaqueteAl=array();
-
-while($row2 = mysql_fetch_array($paquetesAle))
-		{
-		array_push($idPaqueteAl,$row2[0]);
-		array_push($nombrePaqueteAl,$row2[1]);
-		}
-	
-	
-
-
-
-
-
-
-// consulta para realizar el modificado de la tabla
-$consulta = mysql_query("SELECT nombrePaquete, imagen, descripcion, costo FROM paquetes WHERE eliminar=0 AND idPaquete='$id'",$link);
-$row = mysql_fetch_array($consulta);
-
-
-?>				
+					<h3 class="wow bounceInLeft" data-wow-delay="0.4s"><?php echo $titulo1;?></h3>	
+		
                     
                     <div class="block2">
 						<div class="extra_wrapper wow bounceInLeft animated" data-wow-delay="0.6s">
@@ -267,12 +258,27 @@ $row = mysql_fetch_array($consulta);
                        			<time >$<span><?php echo $row[3]; ?></span></time>
                          		<br>
                        			<div class="text1 col1 wow bounceInLeft animated" data-wow-delay="0.8s"><a href="#"><?php echo $row[0]; ?></a></div>
-								<img src="../../administracion/imagenes/paquetes/<?php echo $row[1];?>" alt="" class="img_inner fleft wow bounceInLeft" data-wow-delay="1.0s">
+								<img src="../../administracion/imagenes/paquetes/<?php echo $row[1];?>" alt="" class="img_inner fleft wow bounceInLeft" data-wow-delay="1.0s" style="width:500px; height:313px;">
                         		<?php echo $row[2]; ?>
                         
                         	</div>		
 						</div>
 					</div>
+
+					<!-- boton de compartir-->
+
+						<div id="fb-root"></div>
+						<script>(function(d, s, id) {
+ 						 var js, fjs = d.getElementsByTagName(s)[0];
+  						if (d.getElementById(id)) return;
+  						js = d.createElement(s); js.id = id;
+  						js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4";
+						  fjs.parentNode.insertBefore(js, fjs);
+						}(document, 'script', 'facebook-jssdk'));</script>
+
+						<div class="fb-share-button" data-href="http://tours.itdecsa.com/pages/paquetes/paquete.php?cod=<?php echo $id; ?>&i=<?php echo $i;?>" data-layout="button_count"></div></br>
+
+						<!-- boton de compartir-->
 					
                 </div>
 				<div class="grid_3 prefix_1">
@@ -291,63 +297,28 @@ $row = mysql_fetch_array($consulta);
 				</div>
                 
                 <!--====================para los destinos===================================---->       
-          <div class="grid_3 prefix_1">
+         	 <div class="grid_3 prefix_1">
 					<h5 class=" wow bounceInRight animated" data-wow-delay="0.6s"><?php echo $titulo3;?></h5>
                 
-					   <?php
-					   
-					   
-					   	//conuslta para paquetes aleatorios
-$destinos ="SELECT a.idDestino, a.imagenDestino, a.nombreDestino FROM destinos a 
-INNER JOIN destinosporpaquete b ON a.idDestino=b.idDestino WHERE b.idPaquete='$id' AND eliminar='0' AND a.idioma='$i'  ORDER BY RAND()"; 
-$rdestinos = mysql_query($destinos,$link);
-	
-		//nombre del titulo
-	$idDestino=array();
-	$imagenDestino=array();
-	$nombreDestino=array();
-
-while($row2 = mysql_fetch_array($rdestinos))
-		{
-		array_push($idDestino,$row2[0]);
-		array_push($imagenDestino,$row2[1]);
-		array_push($nombreDestino,$row2[2]);
-		}
-					   
-					   
+			  <?php
 					   
 			  for($k=0;$k<count($idDestino);$k++)
 			  {
 			   ?>
-                
-             
 						<a href="destino.php?cod=<?php echo $id; ?>&cod1=<?php echo $idDestino[$k]; ?>&i=<?php echo $i;?>"> <img class="destinos" src="../../administracion/imagenes/destinos/<?php echo $imagenDestino[$k];?>" alt=""></a>
 							<div class="title"><?php echo $nombreDestino[$k];?></div>
 					<br/>
 				
-                <?php  } ?>
+               <?php  } ?>
 				
                 
 <!--====================fin destinos=================-->       
         
-                </div>
-                
-                
-                
+                </div>                
                
 			</div>
            
-		</div>
-        
-        
-       
-       
-       
-
-        
-       				
-        
-        
+		</div>       
         
 <!--==============================footer=================================-->
 			<footer>
@@ -375,4 +346,5 @@ while($row2 = mysql_fetch_array($rdestinos))
 		})
 		</script>
 	</body>
+
 </html>

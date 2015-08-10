@@ -79,8 +79,8 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1
 	<body>
 
 	<!--para los iconos de idioma-->    
-    <a class='flotanteE' href='blog.php?i=0' ><img src='../images/esp.png' border="0"/></a>
-    <a class='flotanteI' href='blog.php?i=1' ><img src='../images/ing.png' border="0"/></a>
+ <a class='flotanteE' href='../index.php?i=0' ><img src='../images/esp.png' border="0"/></a>
+    <a class='flotanteI' href='../index.php?i=1' ><img src='../images/ing.png' border="0"/></a>
 	<!--fin idioma-->
 
 		 <?php 

@@ -70,8 +70,8 @@
 	<body>
 
 	<!--para los iconos de idioma-->    
-    <a class='flotanteE' href='multimedia.php?i=0' ><img src='../images/esp.png' border="0"/></a>
-    <a class='flotanteI' href='multimedia.php?i=1' ><img src='../images/ing.png' border="0"/></a>
+   <a class='flotanteE' href='../index.php?i=0' ><img src='../images/esp.png' border="0"/></a>
+    <a class='flotanteI' href='../index.php?i=1' ><img src='../images/ing.png' border="0"/></a>
 	<!--fin idioma-->
 
 		 <?php 

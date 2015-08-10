@@ -70,8 +70,8 @@
 	<body>
 
 	<!--para los iconos de idioma-->    
-    <a class='flotanteE' href='paquete.php?i=0' ><img src='../../images/esp.png' border="0"/></a>
-    <a class='flotanteI' href='paquete.php?i=1' ><img src='../../images/ing.png' border="0"/></a>
+    <a class='flotanteE' href='../../index.php?i=0' ><img src='../../images/esp.png' border="0"/></a>
+    <a class='flotanteI' href='../../index.php?i=1' ><img src='../../images/ing.png' border="0"/></a>
 	<!--fin idioma-->
 
 		 <?php 
@@ -185,39 +185,6 @@
 		</header>
 <!--==============================Content=================================-->
 
-
-
-
-
-
-
-
-     <!--------------para el idioma----------->
-     
-     <!--
-		 <div class="info">
-    	<a href="#" class="back">
-        
-         <div id="google_translate_element"></div><script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-}
-</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-           
-        </a>
-    </div>
-        -->
-        
-        <!-----------------fin idioma-------------->
-        
-
-
-
-
-
-
-
-
 		<div class="content"><div class="ic">More Website Templates @ itdecsa.com - February 10, 2014!</div>
 			<div class="container_12">
 				<div class="grid_8">
@@ -233,7 +200,7 @@ $id= $_GET['cod'];
 
 
 	//conuslta para paquetes aleatorios
-$paquetesAleatorios ="SELECT idPaquete, nombrePaquete FROM `paquetes` WHERE eliminar='0'  ORDER BY RAND()"; 
+$paquetesAleatorios ="SELECT idPaquete, nombrePaquete FROM `paquetes` WHERE eliminar='0' AND idioma='$i' ORDER BY RAND()"; 
 $paquetesAle = mysql_query($paquetesAleatorios,$link);
 	
 		//nombre del titulo

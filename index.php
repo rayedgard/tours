@@ -172,6 +172,13 @@
 		$corporativo="CORPORATE MAIL";
 		$diseno="DESIGN";
 
+		//quienes somos
+		$quienessomos1="MISSION";
+		$quienessomos2="VIEW";		
+		$descripcion1="We are a travel agency dedicated to the sales of tour packages where you can enjoy the wonder and richness of our country by providing excellent service , with the professionalism that characterizes us.";
+		$descripcion2="Give each tourist a memorable, sustainable experience. Meeting their neecidades according to the new requirements and technological advances.";
+		$descripcion3="It is recognized as a model of innovation company with sustainable growth with efficiency, warmth and professionalism that characterizes us.";
+
 
 	}
 	if($i==0)
@@ -204,6 +211,13 @@
 		$politicas="POLÍTICAS DE PRIVACIDAD";
 		$corporativo="CORREO COORPORATIVO";
 		$diseno="DISEÑO";
+
+		//quienes somos
+		$quienessomos1="MISIÓN";
+		$quienessomos2="VISIÓN";		
+		$descripcion1="Somos una agencia de viajes dedicado a la ventas de paquetes turísticos donde usted podrá disfrutar de la maravilla y riqueza de nuestro País brindándole un servicio de excelencia, con el profesionalismo que nos caracteriza.";
+		$descripcion2="Brindar a cada turista una experiencia memorable, sostenible. Satisfaciendo sus neecidades de acuerdo a las nuevas exigencias y avances tecnológicos.";
+		$descripcion3="Ser reconocidos como una empresa modelo de innovación con el crecimiento sostenible con la eficacia, calidez y el profesionalismo que nos caracteriza.";
 	}
 	//fin discriminacion de idioma
 
@@ -317,36 +331,6 @@ while($row2 = mysql_fetch_array($eventos))
 		
         <header>
      
-     
-     
-     
-     
-     <!--para el idioma-->
-     
-     
-	<!--	 <div class="info">
-    	<a href="#" class="back">
-        
-         <div id="google_translate_element"></div><script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-}
-</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-           
-        </a>
-    </div>
-        -->
-        
-        <!--fin idioma-->
-        
-        
-        
-        
-        
-        
-        
-        
-        
         	<div class="container_12">
                      
             
@@ -410,7 +394,7 @@ function googleTranslateElementInit() {
 							
 						</div>
 
-						<a class="wow bounceInRight animated" data-wow-delay="1.2s" style="visibility: visible; -webkit-animation-delay:0.4s;" href="pages/paquetes/paquete.php?cod=<?php echo $idaPquete[$j];?>&i=<?php echo $i;?>" ><?php echo $boton; ?></a>
+						<a class="wow bounceInRight animated" data-wow-delay="1.2s" style="visibility: visible; -webkit-animation-delay:0.4s;" href="pages/paquetes/paquete.php?cod=<?php echo $idPaquete[$j];?>&i=<?php echo $i;?>" ><?php echo $boton; ?></a>
 					</div>
 
 				</div>
@@ -434,7 +418,7 @@ function googleTranslateElementInit() {
                 
                 <div class="grid_4">
 
-					<div class="banner <?php echo $transicion[$k];?>" data-wow-delay="1.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+					<div class="banner1 <?php echo $transicion[$k];?>" data-wow-delay="1.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
 						<img src="administracion/imagenes/paquetes/<?php echo $imagenAl[$k];?>" alt="">
 
 						<div class="label">
@@ -700,19 +684,19 @@ mail($destinatario,$asunto,$cuerpo,$headers);
 					<h3 class="extra_wrapper wow bounceInRight animated" data-wow-delay="0.2s" style="text-align:justify;visibility: visible; -webkit-animation-delay: 0.4s;"><?php echo $titulo2; ?></h3>
 					
 					<div class="extra_wrapper wow bounceInRight animated" data-wow-delay="0.4s" style="text-align:justify;visibility: visible; -webkit-animation-delay: 0.4s;" >						
-                        Somos una agencia de viajes dedicado a la ventas de paquetes turísticos donde usted podrá disfrutar de la maravilla y riqueza de nuestro País brindándole un servicio de excelencia, con el profesionalismo que nos caracteriza.                                               
+                       <?php echo $descripcion1; ?>                                               
 					</div>					
                     <br>  
 
-					<div class="col1  wow bounceInRight animated" data-wow-delay="0.8s" style="visibility: visible; -webkit-animation-delay: 0.4s;">MISI&Oacute;N</div>
+					<div class="col1  wow bounceInRight animated" data-wow-delay="0.8s" style="visibility: visible; -webkit-animation-delay: 0.4s;"><?php echo $quienessomos1; ?>  </div>
                     <p class=" wow bounceInRight animated" data-wow-delay="1.0s" style="text-align:justify; visibility: visible; -webkit-animation-delay: 0.4s;">
-                    Brindar a cada turista una experiencia memorable, sostenible. Satisfaciendo sus neecidades de acuerdo a las nuevas exigencias y avances tecnológicos.
+                   <?php echo $descripcion2; ?>  
 					</p>
                     
                     <br>
-                    <div class="col1 wow bounceInRight animated" data-wow-delay="1.2s" style="visibility: visible; -webkit-animation-delay: 0.4s;">VISI&Oacute;N</div>
+                    <div class="col1 wow bounceInRight animated" data-wow-delay="1.2s" style="visibility: visible; -webkit-animation-delay: 0.4s;"><?php echo $quienessomos1; ?>  </div>
                     <p class=" wow bounceInRight animated" data-wow-delay="1.4s" style="text-align:justify;visibility: visible; -webkit-animation-delay: 0.4s;">
-                   Ser reconocidos como una empresa modelo de innovación con el crecimiento sostenible con la eficacia, calidez y el profesionalismo que nos caracteriza.
+                  <?php echo $descripcion3; ?>  
 					</p>
                     
                     
