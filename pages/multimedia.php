@@ -216,7 +216,7 @@ while($row2 = mysql_fetch_array($rfotos))
 
 
 //conuslta para las categoria de fotos
-$catego ="SELECT  idCategoriaFoto, nombreCategoria FROM categoriafotos ORDER BY RAND()"; 
+$catego ="SELECT  idCategoriaFoto, nombreCategoria FROM categoriafotos WHERE eliminar='0' ORDER BY RAND()"; 
 $cat = mysql_query($catego,$link);
 	
 //nombre del titulo
@@ -269,21 +269,6 @@ while($row1 = mysql_fetch_array($cat))
 
 						<?php  } ?>	
 					</ul>
-
-
-					<ul>
-					<li>
-					 <a href="multimedia.php?cod=100"> 
-					 	<span>
-					 		VIDEOS
-					 	</span>
-					 </a>
-					</li>
-
-					</ul>
-
-
-
 				</nav>
 
 

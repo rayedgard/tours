@@ -739,7 +739,7 @@ mail($destinatario,$asunto,$cuerpo,$headers);
 					<div class="block1">
 						<time datetime="2014-01-01"><?php echo $dia[$k];?><span><?php echo substr($mes[$k],0,3);?></span></time>
 						<div class="extra_wrapper">
-							<div class="text1 col1"><a href="#"><?php echo $nombreEvento[$k];?></a></div>
+							<div class="text1 col1"><a href="javascript:Abrir_ventana('pages/eventos.php?id=<?php echo $idEvento[$k];?>&i=<?php echo $i;?>')"><?php echo $nombreEvento[$k];?></a></div>
 							<?php echo substr( strip_tags($descEvento[$k]) ,0,90)."...";?>
 						</div>
 					</div>
@@ -755,6 +755,15 @@ mail($destinatario,$asunto,$cuerpo,$headers);
 
 			</div>
 		</div>
+
+		<script language="JavaScript" type="text/javascript">
+<!--
+function Abrir_ventana(pagina){
+var opciones="toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800, height=500, top=100, left=300";
+window.open(pagina,"",opciones);
+}
+//-->
+</script>
 <!--==============================footer=================================-->
 		<footer>
 			<div class="container_12">
